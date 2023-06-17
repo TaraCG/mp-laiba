@@ -1,0 +1,28 @@
+/* pages/landing/landing.wxss */
+
+.container {
+  background-image:
+  url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+  position: fixed;
+  top:0; bottom:0;
+  left:0; right:0;
+  background-size: cover;
+  background-position: center;
+  display:flex; justify-content: center;
+}
+
+.title {
+  color: white;
+  font-size: 72rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button{
+  margin-top: 300rpx;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}

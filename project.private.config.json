@@ -1,6 +1,7 @@
 {
   "projectname": "mp-laiba",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": false
   }
 }
