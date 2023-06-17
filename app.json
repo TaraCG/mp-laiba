@@ -12,6 +12,18 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/pages/index",
+      "text": "Home"
+    }, {
+      "pagePath": "pages/pages/create",
+      "text": "+ Add Event"
+    }, {
+      "pagePath": "pages/user/profile",
+      "text": "Profile"
+    }]
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
