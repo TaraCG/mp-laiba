@@ -5,7 +5,10 @@ Page({
    * Page initial data
    */
   data: {
-
+    events: [
+      {title: "Event 01"},
+      {title: "Event 02"},
+    ]
   },
 
   /**
@@ -25,8 +28,13 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow() {
 
+  onShow() {
+    const id = parseInt(this.options.id)
+    console.log("onShow: id",id)
+    const story = app.globalData.stories[id]
+    this.setData(story)
+    this.setData({id: id })
   },
 
   /**

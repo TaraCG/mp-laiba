@@ -1,2 +1,18 @@
 <!--pages/pages/index.wxml-->
-<text>pages/pages/index.wxml</text>
+<!-- **We still havent added any events yet** -->
+
+<view class="main">
+  <text class="h1">ALL EVENTS</text>
+  <!-- <button bindtap="changeTitle">change title</button> -->
+  <block wx:if="{{events.length > 0}}">
+    <view class="cards">
+      <view class="card" wx:for="{{events}}" wx:for-item="event" bindtap="goToShow" data-id="{{id}}">
+        <!-- <text>{{title}}</text> -->
+        <text>{{event.title}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    no content
+  </block>
+</view>
