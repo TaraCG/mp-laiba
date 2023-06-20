@@ -1,5 +1,5 @@
-/* pages/pages/index.wxss */
-/* pages/stories/stories.wxss */
+/* pages/events/index.wxss */
+
 
 .main {
   width: 650rpx;
@@ -7,10 +7,6 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  text-align: center;
-}
-
-.title {
   text-align: center;
 }
 

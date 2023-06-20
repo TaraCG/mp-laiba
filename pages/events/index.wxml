@@ -1,10 +1,12 @@
-<!--pages/pages/index.wxml-->
-<!-- **We still havent added any events yet** -->
-<view class="container">
-  <text class="h2">Post Your Event Bitches</text>
-  <text class="paragraph">Let People See It</text>
-  <navigator open-type="switchTab" class="btn-filled" url="/pages/events/form" >Post</navigator>
-</view>
+<!--pages/events/index.wxml-->
+<!-- **Banner** -->
+<navigator open-type="switchTab" url="/pages/events/form">
+  <view class="banner banner-dark" style="  background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');">
+    <text class="title">Post Your Event</text>
+    <text>Get Hundreds of Sign Ups </text>
+  </view>
+</navigator>
+
 
 <view class="main">
   <text class="h1">ALL EVENTS</text>
@@ -12,12 +14,12 @@
   <block wx:if="{{events.length > 0}}">
     <view class="cards">
       <view class="card" wx:for="{{events}}" wx:for-item="event" bindtap="goToShow" data-id="{{id}}">
-        <!-- <text>{{title}}</text> -->
         <text>{{event.title}}</text>
       </view>
     </view>
   </block>
+  <!-- **We still havent added any events yet** -->
   <block wx:else>
-    no content
+    No events posted yet. Be the first one
   </block>
 </view>

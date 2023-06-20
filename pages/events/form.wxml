@@ -1,5 +1,4 @@
 <!--pages/pages/create.wxml-->
-<text>pages/pages/create.wxml</text>
 <view class="container">
   <form bindsubmit="save">
     <view> Title </view>
@@ -14,7 +13,7 @@
     <view> Address </view>
     <input type="text" name="title"/>
 
-    <button class="btn-filled" form-type="submit"> Save</button>
+    <button class="btn btn-filled" form-type="submit"> Save</button>
   
   </form>
 </view>

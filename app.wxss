@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import "./components/banner.wxss";
 @import "./components/colors.wxss";
 /* @import './components/typography.wxss';
 /* @import './components/button.wxss'; */
