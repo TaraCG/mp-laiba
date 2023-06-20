@@ -1,0 +1,17 @@
+.btn {
+  text-align: center;
+  margin: 64rpx 32rpx;
+  text-transform: uppercase;
+  border-radius: 20rpx;
+  padding: 40rpx 112rpx;
+}
+
+.btn-filled {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-unfilled {
+  border: 4rpx var(--primary-color) solid;
+  color: var(--primary-color);
+}

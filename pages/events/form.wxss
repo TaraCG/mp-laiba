@@ -1,0 +1,12 @@
+/* pages/pages/create.wxss */
+input {
+  border: solid 1px #0f0f0f;
+  margin-bottom: 30rpx;
+  padding: 10rpx 20rpx;
+}
+
+textarea {
+  border: solid 1px #0f0f0f;
+  margin-bottom: 15rpx;
+  padding: 10rpx;
+}

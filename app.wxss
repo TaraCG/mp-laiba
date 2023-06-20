@@ -1,18 +1,14 @@
 /**app.wxss**/
+@import "./components/colors.wxss";
+/* @import './components/typography.wxss';
+/* @import './components/button.wxss'; */
+
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
+  padding: 200rpx 40rpx;
   box-sizing: border-box;
-  margin-bottom: 10rpx;
-} 
-
-/* .tapBar {
-  margin-bottom: 100rpx;
-  margin-top: 100rpx;
-  margin-left: 100rpx;
-  margin-right: 100rpx;
-} */
+}

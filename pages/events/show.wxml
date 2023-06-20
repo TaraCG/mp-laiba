@@ -1,0 +1,6 @@
+<!--pages/pages/show.wxml-->
+<view class="container">
+<text class="h1">Event Title</text>
+<text class="h2">About the Event</text>
+<text class="paragraph">Talk about your event here. Its happening blabla</text>
+</view>

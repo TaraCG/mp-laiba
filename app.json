@@ -1,9 +1,9 @@
 {
   "pages":[
     "pages/landing/landing",
-    "pages/pages/index",
-    "pages/pages/show",
-    "pages/pages/create",
+    "pages/events/index",
+    "pages/events/show",
+    "pages/events/form",
     "pages/user/profile"
   ],
   "window":{
@@ -15,10 +15,10 @@
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/pages/index",
+      "pagePath": "pages/events/index",
       "text": "Home"
     }, {
-      "pagePath": "pages/pages/create",
+      "pagePath": "pages/events/form",
       "text": "+ Add Event"
     }, {
       "pagePath": "pages/user/profile",

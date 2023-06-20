@@ -1,4 +1,6 @@
 // pages/pages/index.js
+const app = getApp()
+
 Page({
 
   /**
@@ -11,6 +13,13 @@ Page({
     ]
   },
 
+  goToShow(e) {
+    console.log('function goToShow')
+    wx.navigateTo({
+      url: `/pages/events/show?index=${e.currentTarget.dataset.index}`
+    })
+  },
+  
   /**
    * Lifecycle function--Called when page load
    */

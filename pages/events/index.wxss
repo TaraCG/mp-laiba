@@ -1,11 +1,5 @@
 /* pages/pages/index.wxss */
 /* pages/stories/stories.wxss */
-.h1 {
-  font-size: 50rpx;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 20rpx 0;
-  text-align: center;
-}
 
 .main {
   width: 650rpx;
@@ -15,12 +9,11 @@
   flex-wrap: wrap;
   text-align: center;
 }
+
 .title {
-  font-size: 50rpx;
-  font-weight: bold;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
+
 .card {
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
   background-position: center;
@@ -40,6 +33,4 @@
 
 .card text {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40rpx;
 }

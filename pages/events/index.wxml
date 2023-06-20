@@ -1,5 +1,10 @@
 <!--pages/pages/index.wxml-->
 <!-- **We still havent added any events yet** -->
+<view class="container">
+  <text class="h2">Post Your Event Bitches</text>
+  <text class="paragraph">Let People See It</text>
+  <navigator open-type="switchTab" class="btn-filled" url="/pages/events/form" >Post</navigator>
+</view>
 
 <view class="main">
   <text class="h1">ALL EVENTS</text>
