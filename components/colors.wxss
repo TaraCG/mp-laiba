@@ -1,6 +1,6 @@
 page {
-  --primary-color: rgba(140, 63, 237, 1);
-  --red: rgba(235, 87, 87, 1);
+  --primary-color: rgb(255, 133, 81);
+  --accent-red: rgba(235, 87, 87, 1);
   --dark:rgba(18, 13, 38, 1);
   --grey-dark: rgba(116, 118, 136, 1);
   --grey-light: rgba(208, 207, 212, 1);

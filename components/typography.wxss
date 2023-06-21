@@ -3,7 +3,7 @@
 .h3 {
   line-height: 1.15;
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .h1 {

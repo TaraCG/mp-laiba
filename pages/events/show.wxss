@@ -1,25 +1,16 @@
 /* pages/pages/show.wxss */
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
 .info {
-  flex-direction: column;
   padding: 20rpx auto;
+  margin: 20rpx 0;
+  
 }
 
 .details {
   margin-bottom: .5rem;
 }
 .details-img {
-  width: 3rem;
+  width: 80rpx;
   margin-right: .5rem;
-}
-
-.details-text {
-  display: flex;
-  flex-direction: column;
 }
 
 .label {
@@ -29,7 +20,10 @@
 }
 
 .value {
-  font-size: 16px;
   color: #666;
   text-emphasis: left;
+}
+
+.buttons {
+  margin-top: 2rem;
 }

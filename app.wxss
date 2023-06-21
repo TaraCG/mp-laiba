@@ -24,6 +24,10 @@ page{
   display: flex;
 }
 
+.column {
+  flex-direction: column;
+}
+
 .ai-c {
     align-items: center;
 }
@@ -34,4 +38,9 @@ page{
 
 .jc-sb {
     justify-content: space-between;
+}
+
+.icon {
+  width: 80rpx;
+  margin-right: .5rem;
 }
