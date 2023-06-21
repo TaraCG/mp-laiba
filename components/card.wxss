@@ -1,0 +1,73 @@
+.cards {
+  /* background-color: #f4edf7; */
+  border-radius: 1rem;
+}
+
+.card {
+  padding: 0.75rem;
+  margin: .5rem 0;
+  overflow: hidden;
+  /* border-bottom: 1rpx solid var(--grey-light); */
+  box-shadow: 0px 10px 35px rgba(87, 92, 138, 0.06);
+  display: flex;
+}
+
+.card-hor {
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-ver {
+  flex-direction: column;
+  height: 264px;
+}
+
+.card-image {
+  border-radius: 20rpx;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img-big {
+  width: 100%;
+  height: 45%;
+  margin-bottom: 1rem;
+}
+
+.img-small {
+  height: 100%;
+  width: 40%;
+  margin-right: .75rem;
+}
+
+.card-info {
+  padding: .15rem;
+}
+
+.card-date text {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: .875rem;
+  text-transform: uppercase;
+}
+
+/* .bookmark::before{
+  content: '';
+  height: 40px;
+  width: 40px;
+  color: var(--red);
+  display: inline-block;
+  position: relative;
+} */
+
+.h3 {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.card-address text {
+  color: var(--grey-dark);
+  font-size: .875rem;
+}

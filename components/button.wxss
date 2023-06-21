@@ -1,9 +1,9 @@
 .btn {
+  position: relative;
+  display: inline-block;
+  border: 0;
   text-align: center;
-  margin: 64rpx 32rpx;
   text-transform: uppercase;
-  border-radius: 20rpx;
-  padding: 40rpx 112rpx;
 }
 
 .btn-filled {

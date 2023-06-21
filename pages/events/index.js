@@ -18,7 +18,7 @@ Page({
     wx.navigateTo({
       url: `/pages/events/show?index=${e.currentTarget.dataset.index}`
     })
-  },
+  },  
   
   /**
    * Lifecycle function--Called when page load

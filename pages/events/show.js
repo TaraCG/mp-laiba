@@ -7,12 +7,22 @@ Page({
   data: {
 
   },
-
+  goToForm(e) {
+    console.log('function goToForm');
+    const index = e.currentTarget.dataset.index;
+  
+    // Check if it's an existing event
+    if (index) {
+      wx.navigateTo({
+        url: `/pages/events/form?index=${index}&edit=true`
+      });
+    }
+  },
+  
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
   },
 
   /**
