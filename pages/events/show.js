@@ -81,5 +81,29 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  deleteEvent(e) {
+    const id = this.data.event.id;
+
+    // make a DELETE request
+    wx.showModal({
+      title: 'Are you sure?',
+      content: 'Delete this event?',
+      success(res) {
+        if (res.confirm){
+          wx.request({
+            url: `http://localhost:3000/api/v1/events/${data.id}`,
+            method: 'DELETE',
+            success(res) {
+              // redirect to index page when done
+              wx.redirectTo({
+                url: '/pages/index/index'
+              });
+            }
+          });
+        }
+      }
+    });
   }
 })
