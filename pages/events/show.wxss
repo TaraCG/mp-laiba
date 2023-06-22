@@ -1,4 +1,5 @@
 /* pages/pages/show.wxss */
+
 .info {
   padding: 20rpx auto;
   margin: 20rpx 0;
@@ -8,6 +9,7 @@
 .details {
   margin-bottom: .5rem;
 }
+
 .details-img {
   width: 80rpx;
   margin-right: .5rem;
@@ -25,5 +27,7 @@
 }
 
 .buttons {
-  margin-top: 1.1rem;
+  position: fixed;
+  gap: 5%;
+  bottom: 5%;
 }

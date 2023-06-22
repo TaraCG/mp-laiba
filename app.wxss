@@ -39,8 +39,3 @@ page{
 .jc-sb {
     justify-content: space-between;
 }
-
-.icon {
-  width: 80rpx;
-  margin-right: .5rem;
-}

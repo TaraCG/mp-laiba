@@ -2,7 +2,7 @@
 </view>
 
 <view class="container flex column">
-  <text class="h1">International Band Music Concert</text>
+  <text class="h1">{{event.title}}</text>
   <view class="info flex column jc-sb">
     <view class="details flex">
       <image class="details-img" src="../images/Date.png" mode="widthFix"/>
@@ -27,14 +27,14 @@
     </view>
   </view>
 
-<view class="event-description flex column">
-  <text class="h2">About the Event</text>
-  <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </text>
-</view>
+  <view class="event-description flex column">
+    <text class="h2">About the Event</text>
+    <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </text>
+  </view>
 
-<view class="buttons flex">
-  <button class="btn btn-filled" bindtap="goToForm">Edit</button>
-  <button class="btn btn-unfilled" bindtap="onDelete">Delete</button>
-</view>
-
+  
+  <view class="container buttons flex">
+    <button class="btn btn-filled" bindtap="goToForm">Edit</button>
+    <button class="btn btn-unfilled" bindtap="onDelete">Delete</button>
+  </view>
 </view>

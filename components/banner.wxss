@@ -31,7 +31,3 @@
 .title {
   font-size: 1.8rem;
 }
-
-.buttons {
-  gap: 10%;
-}

@@ -16,9 +16,9 @@ App({
 
   globalData: {
     userInfo: null,
-    events: [
-      {title: "Event 01"},
-      {title: "Event 02"},
-    ]
+    // events: [
+    //   {title: "Event 01"},
+    //   {title: "Event 02"},
+    // ]
   }
 })
