@@ -1,25 +1,21 @@
-// pages/pages/index.js
+// pages/index/index.js
 const app = getApp()
 
 Page({
-
   /**
    * Page initial data
    */
   data: {
-    events: [
-      {title: "Event 01"},
-      {title: "Event 02"},
-    ]
+
   },
 
   goToShow(e) {
-    console.log('function goToShow')
+    console.log('function goToShow');
     wx.navigateTo({
-      url: `/pages/events/show?index=${e.currentTarget.dataset.index}`
-    })
-  },  
-  
+      url: `/pages/events/show?index=${e.currentTarget.dataset.index}`,
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
@@ -37,13 +33,24 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-
   onShow() {
-    const id = parseInt(this.options.id)
-    console.log("onShow: id",id)
-    const story = app.globalData.stories[id]
-    this.setData(story)
-    this.setData({id: id })
+    // Save reference to page
+    let page = this;
+    // Get api data
+    wx.request({
+      url: "http://localhost:3000/api/v1/events",
+      method: 'GET',
+      success(res) {
+        const events = res.data.events;
+
+        // Update local data
+        page.setData({
+          events: events
+        });
+
+        wx.hideToast();
+      }
+    });
   },
 
   /**

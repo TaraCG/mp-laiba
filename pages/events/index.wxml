@@ -7,22 +7,6 @@
     <text>Get Hundreds of Sign Ups </text>
   </view>
 </navigator>
-<!-- 
-<view class="carousel-container">
-  <swiper class="carousel-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" circular="{{true}}">
-    <swiper-item>
-      <view class="banner" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');"></view>
-    </swiper-item>
-    <swiper-item>
-      <view class="banner" style="background-image: url('https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></view>
-    </swiper-item>
-    <swiper-item>
-      <view class="banner" style="background-image: url('https://images.unsplash.com/photo-1682687982470-8f1b0e79151a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></view>
-    </swiper-item>
-  </swiper>
-</view> -->
-
-
 
 <view class="container">
   <text class="p p-dark">Sort by</text>
@@ -33,11 +17,11 @@
         <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')"></view>
           <view class="card-info">
             <view class="card-date">
-              <text>June 26, 1994</text>
+              <text>{{event.start_time}}</text>
             </view>
-            <text class="h3">Jo Malone London's Mother's Day Presents</text>
+            <text class="h3">{{event.title}}</text>
             <view class="card-address">
-              <text>Number Street, City, Country</text>
+              <text>{{event.address}}</text>
               <view class="bookmark"></view>
             </view>
           </view>
