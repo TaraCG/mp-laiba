@@ -1,9 +1,11 @@
 <!--pages/landing/landing.wxml-->
-<div class="container">
-    <text class="title">Welcome to LAIBA! 
-    我们一起来吧!</text>
-    <navigator open-type="tabBar" url="/pages/index/index" class="button">
-      LAIBA
+<view class="container">
+  <view class="text-container">
+    <text class="header">Laiba</text>
+    <text class="slogan">我们一起来吧!</text>
+  </view>
+    <navigator open-type="switchTab" url="/pages/events/index">
+      Check All Events <i class="fa-light fa-arrow-right" style="color: #050505;"></i>
     </navigator>
-</div>
+</view>
 

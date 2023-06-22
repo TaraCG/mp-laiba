@@ -1,0 +1,19 @@
+<!--pages/pages/create.wxml-->
+<view class="container">
+  <form bindsubmit="save">
+    <view> Title </view>
+    <input type="text" name="title"/>
+
+    <view> About the Event </view>
+    <textarea name="body"/>
+
+    <view> Date </view>
+    <input type="text" name="title"/>
+
+    <view> Address </view>
+    <input type="text" name="title"/>
+
+    <button class="btn btn-filled" form-type="submit"> Save</button>
+  
+  </form>
+</view>

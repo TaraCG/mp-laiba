@@ -1,0 +1,32 @@
+/* pages/events/index.wxss */
+
+
+.main {
+  width: 650rpx;
+  margin: 80rpx auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.card {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+  background-position: center;
+  background-size: cover;
+  height: 250rpx;
+  width: 250rpx;
+  padding: 20px 10px;
+  margin: 20rpx 0;
+  border-radius: 5px;
+}
+
+.cards {
+  display: grid; flex: 0%;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.card text {
+  color: white;
+}

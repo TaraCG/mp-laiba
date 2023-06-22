@@ -1,28 +1,61 @@
 /* pages/landing/landing.wxss */
-
 .container {
-  background-image:
-  url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.text-container {
+  display: flex;
+  line-height: .9;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header {
+  font-size: 200rpx;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20rpx;
+  background: linear-gradient(124deg, 
+  #ff2400,
+  #e81d1d, 
+  #e8b71d, 
+  #e3e81d, 
+  #1de840, 
+  #1ddde8, 
+  #2b1de8, 
+  #dd00f3, 
+  #dd00f3);
+
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+/* text-fill-color: transparent; */
+background-size: 500% auto;
+animation: textShine 5s ease-in-out infinite alternate;
+}
+
+.slogan {
+  font-family: cursive;
+  font-size: 48rpx;
+}
+
+navigator {
+  text-transform: uppercase;
   position: fixed;
-  top:0; bottom:0;
-  left:0; right:0;
-  background-size: cover;
-  background-position: center;
-  display:flex; justify-content: center;
+  bottom: 150rpx;
 }
 
-.title {
-  color: white;
-  font-size: 72rpx;
-  text-align: center;
-  font-weight: bold;
-}
-
-.button{
-  margin-top: 300rpx;
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #670BFF;
-  transition: background 0.3s ease;
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
 }
