@@ -2,34 +2,39 @@
 
 <!-- **Banner** -->
 <navigator open-type="switchTab" url="/pages/events/form">
-  <view class="banner banner-dark" style="background-image: url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
-    <text class="title">Post Your Event</text>
-    <text>Get Hundreds of Sign Ups </text>
-  </view>
+    <view class="banner banner-dark" style="background-image: url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
+        <text class="title">Post Your Event</text>
+        <text>Get Hundreds of Sign Ups </text>
+    </view>
 </navigator>
 
+<!-- Event-cards -->
 <view class="container">
-  <text class="p p-dark">Sort by</text>
-  <!-- <button bindtap="changeTitle">change title</button> -->
-  <block wx:if="{{events.length > 0}}">
-    <view class="cards">
-      <view class="card card-hor" wx:for="{{events}}" wx:for-item="event" bindtap="goToShow" data-id="{{id}}">
-        <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')"></view>
-          <view class="card-info">
-            <view class="card-date">
-              <text>{{event.start_time}}</text>
+    <text class="p p-dark">Sort by</text>
+    <block wx:if="{{events.length > 0}}">
+        <view class="cards">
+            <view class="card card-hor" wx:for="{{events}}" wx:key="index" wx:for-item="event">
+                <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')" bindtap="goToShow" data-id="{{event.id}}">
+                    <text class="poster-details p">Details</text>
+                </view>
+                <view class="card-info-hor">
+                    <view class="flex column">
+                        <text class="card-date">{{event.start_time}}</text>
+                        <text class="h3">{{event.title}}</text>
+                        <text class="card-address">{{event.address}}</text>
+                    </view>
+                    <button class="booking-button" bindtap="addBooking" data-eventid="{{event.id}}">
+                        {{hasBooking(event.bookings, userId) ? 'Going' : 'Attend'}}
+                    </button>
+                </view>
             </view>
-            <text class="h3">{{event.title}}</text>
-            <view class="card-address">
-              <text>{{event.address}}</text>
-              <view class="bookmark"></view>
-            </view>
-          </view>
-      </view>
-    </view>
-  </block>
-  <!-- **We still havent added any events yet** -->
-  <block wx:else>
-    No events posted yet. Be the first one
-  </block>
+
+        </view>
+    </block>
+    <block wx:else>
+        <view class="flex column">
+            <text>No events posted yet. Be the first one</text>
+            <button class="btn btn-filled" open-type="switchTab" url="/pages/events/form">Post event</button>
+        </view>
+    </block>
 </view>

@@ -1,6 +1,7 @@
 .btn {
   position: relative;
   display: inline-block;
+  margin-top: .5rem;
   border: 0;
   text-align: center;
   text-transform: uppercase;
@@ -14,4 +15,14 @@
 .btn-unfilled {
   border: 4rpx var(--primary-color) solid;
   color: var(--primary-color);
+}
+
+.booking-button {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  margin: 0;
+  font-size: 28rpx;
 }

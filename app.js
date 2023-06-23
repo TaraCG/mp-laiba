@@ -16,9 +16,7 @@ App({
 
   globalData: {
     userInfo: null,
-    // events: [
-    //   {title: "Event 01"},
-    //   {title: "Event 02"},
-    // ]
+    baseUrl: 'http://localhost:3000/api/v1/',
+    userId: 2,
   }
 })

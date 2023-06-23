@@ -16,7 +16,7 @@
         },
         {
           "name": "",
-          "pathName": "pages/events/form",
+          "pathName": "pages/events/show",
           "query": "",
           "launchMode": "default",
           "scene": null

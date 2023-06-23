@@ -1,2 +1,122 @@
 <!--pages/user/profile.wxml-->
-<text>pages/user/profile.wxml</text>
+
+<!-- User info -->
+<view class="container">
+    <view class="user flex column ai-c">
+        <view class="user-info flex column ai-c jc-c">
+            <image class="avatar user-avatar" style="background-image: url('https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=719&q=80')" mode="" />
+            <text class="h1">User Name</text>
+        </view>
+    </view>
+
+    <!-- Event stats -->
+    <view class="stats flex ai-c jc-c">
+        <view class="item flex column ai-c">
+            <text class="p p-dark">7</text>
+            <text class="p p-light">Organized</text>
+        </view>
+        <view class="item flex column ai-c">
+            <text class="p p-dark">7</text>
+            <text class="p p-light">Attended</text>
+        </view>
+    </view>
+
+    <!-- Posted events -->
+    <view class="posted-events">
+        <text class="h2">Posted Events</text>
+        <scroll-view class="container-horizontal" scroll-x="{{true}}">
+            <view class="card card-ver container">
+                <view class="card-image img-big" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')" bindtap="goToShow" data-id="{{event.id}}">
+                    <text class="poster-details p">Details</text>
+                </view>
+                <view class="card-info">
+                    <view class="flex column">
+                        <text class="card-date">June 26, 1994</text>
+                        <text class="h3">Jo Malone London's Mother's Day Presents</text>
+                        <text class="card-address">Number Street, City, Country</text>
+                    </view>
+                </view>
+                <view class="attendees flex ai-c">
+                    <view>
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')" mode="" />
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+                    </view>
+                    <text>20+ attendees</text>
+                </view>
+            </view>
+            <view class="card card-ver container">
+                <view class="card-image img-big" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')" bindtap="goToShow" data-id="{{event.id}}">
+                    <text class="poster-details p">Details</text>
+                </view>
+                <view class="card-info">
+                    <view class="flex column">
+                        <text class="card-date">June 26, 1994</text>
+                        <text class="h3">Jo Malone London's Mother's Day Presents</text>
+                        <text class="card-address">Number Street, City, Country</text>
+                    </view>
+                </view>
+                <view class="attendees flex ai-c">
+                    <view>
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')" mode="" />
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+                    </view>
+                    <text>20+ attendees</text>
+                </view>
+            </view>
+            <view class="card card-ver container">
+                <view class="card-image img-big" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')" bindtap="goToShow" data-id="{{event.id}}">
+                    <text class="poster-details p">Details</text>
+                </view>
+                <view class="card-info">
+                    <view class="flex column">
+                        <text class="card-date">June 26, 1994</text>
+                        <text class="h3">Jo Malone London's Mother's Day Presents</text>
+                        <text class="card-address">Number Street, City, Country</text>
+                    </view>
+                </view>
+                <view class="attendees flex ai-c">
+                    <view>
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')" mode="" />
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+                        <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+                    </view>
+                    <text>20+ attendees</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <!-- Events attending -->
+    <view class="attending-evenets container">
+        <text class="h2">Going To Attend</text>
+        <block wx:if="{{events.length > 0}}">
+            <view class="cards">
+                <view class="card card-hor" wx:for="{{events}}" wx:key="index" wx:for-item="event">
+                    <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')" bindtap="goToShow" data-id="{{event.id}}">
+                        <text class="poster-details p">Details</text>
+                    </view>
+                    <view class="card-info">
+                        <view class="flex column">
+                            <text class="card-date">{{event.start_time}}</text>
+                            <text class="h3">{{event.title}}</text>
+                            <text class="card-address">{{event.address}}</text>
+                        </view>
+                        <button class="booking-button" bindtap="addBooking" data-eventid="{{event.id}}">
+                            {{hasBooking(event.bookings, userId) ? 'Going' : 'Attend'}}
+                        </button>
+                    </view>
+                </view>
+
+            </view>
+        </block>
+        <block wx:else>
+            <view class="flex column">
+                <text>You have no events :( Find one!</text>
+                <button class="btn btn-filled" open-type="switchTab" url="/pages/events/index">All events</button>
+            </view>
+        </block>
+    </view>
+
+</view>

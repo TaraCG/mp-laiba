@@ -8,28 +8,28 @@
       <image class="details-img" src="../images/Date.png" mode="widthFix"/>
       <view class="details-text flex column">
         <text class="label p p-dark">Date</text>
-        <text class="value p p-light">Jun 3, 2022</text>
+        <text class="value p p-light">{{event.start_time}}</text>
       </view>
     </view>
     <view class="details flex">
       <image class="details-img" src="../images/Location.png" mode="widthFix"/>
       <view class="details-text flex column">
-        <text class="label p p-dark">Location</text>
-        <text class="value p p-light">Radius Gallery Santa Cruz, CA</text>
+        <text class="label p p-dark">Address</text>
+        <text class="value p p-light">{{event.address}}</text>
       </view>
     </view>
     <view class="details flex">
       <image class="details-img" src="../images/Attendees.png" mode="widthFix"/>
       <view class="details-text flex column">
         <text class="label p p-dark">Attendees</text>
-        <text class="value p p-light">500+</text>
+        <text class="value p p-light">{{bookingsCount}}</text>
       </view>
     </view>
   </view>
 
   <view class="event-description flex column">
     <text class="h2">About the Event</text>
-    <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </text>
+    <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
   </view>
 
   

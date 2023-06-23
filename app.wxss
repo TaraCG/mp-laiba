@@ -1,9 +1,11 @@
 /**app.wxss**/
+@import "./components/avatar.wxss";
 @import "./components/banner.wxss";
 @import "./components/card.wxss";
 @import "./components/colors.wxss";
 @import "./components/typography.wxss";
 @import "./components/button.wxss";
+@import "./components/tabbar.wxss";
 
 page{
   margin: 0;
