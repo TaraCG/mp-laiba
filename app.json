@@ -10,8 +10,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "LaiBa",
-    "navigationBarTextStyle": "black",
-    "display": "center" 
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#d0cfd4",

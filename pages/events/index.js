@@ -28,26 +28,46 @@ Page({
   },
 
   addBooking: function(options) {
+    const page = this;
     const eventId = options.currentTarget.dataset.eventid;
-
+    console.log({ eventId })
+  
+    const events = page.data.events;
+    const updatedEvents = events.map(event => {
+      if (event.id === eventId) {
+        if (event.has_booking) {
+          event.has_booking = false; // Cancel the booking
+        } else {
+          event.has_booking = true; // Add the booking
+        }
+      }
+      return event;
+    });
+  
+    page.setData({ events: updatedEvents });
+  
+    // Send a request to the server to add/delete the booking
     wx.request({
       url: `${getApp().globalData.baseUrl}events/${eventId}/booking`,
-      method: 'POST',
+      method: 'POST', // or 'DELETE' depending on the scenario
       data: {
-        event_id: eventId,
-        user_id: 2
+        booking: {
+          event_id: eventId,
+          user_id: 1
+        }
       },
       success(res) {
         // Handle the success response
-        if (res.statusCode === 201) {
+        console.log(res)
+        if (res.statusCode === 200) {
           wx.showToast({
-            title: 'Booking added successfully',
+            title: 'Booking updated successfully',
             icon: 'success',
             duration: 2000
           });
         } else {
           wx.showToast({
-            title: 'Failed to add booking',
+            title: 'Failed to update booking',
             icon: 'none',
             duration: 2000
           });
@@ -55,15 +75,14 @@ Page({
       },
       fail(res) {
         // Handle the failure response
-        console.log(data)
+        console.log(res);
         wx.showToast({
-          title: 'Failed to add booking',
+          title: 'Failed to update booking',
           icon: 'none',
           duration: 2000
         });
       }
     });
-    
   },
   
 
@@ -80,6 +99,7 @@ Page({
     method: 'GET',
     success(res) {
       const events = res.data.events;
+      console.log(events)
 
       // Update local data
       page.setData({

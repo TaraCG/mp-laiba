@@ -23,18 +23,17 @@
                         <text class="h3">{{event.title}}</text>
                         <text class="card-address">{{event.address}}</text>
                     </view>
-                    <button class="booking-button" bindtap="addBooking" data-eventid="{{event.id}}">
-                        {{hasBooking(event.bookings, userId) ? 'Going' : 'Attend'}}
+                    <button class="booking-button {{event.has_booking ? 'booking-button-going' : 'booking-button-attend'}}" bindtap="addBooking" data-eventid="{{event.id}}">
+                        {{ event.has_booking ? 'Going!!!' : 'Attend'}}
                     </button>
                 </view>
             </view>
-
         </view>
     </block>
     <block wx:else>
         <view class="flex column">
             <text>No events posted yet. Be the first one</text>
-            <button class="btn btn-filled" open-type="switchTab" url="/pages/events/form">Post event</button>
+            <navigator open-type="switchTab" url="/pages/events/form">Post event →</navigator>
         </view>
     </block>
 </view>

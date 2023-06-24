@@ -29,7 +29,8 @@
     margin-right: 10rpx;
     display: inline-block;
     flex-direction: column;
-    height: 264px;
+    height: 232px;
+    overflow-x: hidden;
 }
 
 .card-image {
@@ -55,6 +56,16 @@
 .card-info-hor {
     position: relative;
     height: 100%;
+}
+
+.card-info {
+    overflow: hidden;
+}
+
+.card-info .h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .card-date {

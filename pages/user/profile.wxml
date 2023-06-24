@@ -12,7 +12,7 @@
     <!-- Event stats -->
     <view class="stats flex ai-c jc-c">
         <view class="item flex column ai-c">
-            <text class="p p-dark">7</text>
+            <text class="p p-dark">3</text>
             <text class="p p-light">Organized</text>
         </view>
         <view class="item flex column ai-c">
@@ -42,7 +42,7 @@
                         <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
                         <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
                     </view>
-                    <text>20+ attendees</text>
+                    <text>20 going</text>
                 </view>
             </view>
             <view class="card card-ver container">
@@ -62,7 +62,7 @@
                         <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
                         <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
                     </view>
-                    <text>20+ attendees</text>
+                    <text>20 going</text>
                 </view>
             </view>
             <view class="card card-ver container">
@@ -82,7 +82,7 @@
                         <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
                         <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
                     </view>
-                    <text>20+ attendees</text>
+                    <text>20 going</text>
                 </view>
             </view>
         </scroll-view>
@@ -108,15 +108,13 @@
                         </button>
                     </view>
                 </view>
-
             </view>
         </block>
         <block wx:else>
-            <view class="flex column">
+            <view class="flex column ai-c">
                 <text>You have no events :( Find one!</text>
-                <button class="btn btn-filled" open-type="switchTab" url="/pages/events/index">All events</button>
+                <navigator class="btn navigator-btn" open-type="switchTab" url="/pages/events/index">All events →</navigator>
             </view>
         </block>
     </view>
-
 </view>
