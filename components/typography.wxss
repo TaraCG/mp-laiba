@@ -1,9 +1,10 @@
 .h1,
-.h2,
-.h3 {
+.h2, 
+h3,
+p{
   line-height: 1.15;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .h1 {

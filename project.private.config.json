@@ -16,7 +16,14 @@
         },
         {
           "name": "",
-          "pathName": "pages/events/form",
+          "pathName": "pages/events/show",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/profile",
           "query": "",
           "launchMode": "default",
           "scene": null

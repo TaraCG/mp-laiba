@@ -31,9 +31,32 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad(options) {
-    console.log("options", options)
+
+  onLoad: function (options) {
+    console.log('inside stories/show, options:', options);
+    const id = options.id;
+    let page = this; // Declare the `page` variable here
+  
+    // Get api data
+    wx.request({
+      url: `${getApp().globalData.baseUrl}events/${id}`,
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        const event = res.data;
+  
+        // Update local data
+        page.setData({
+          event: event,
+          bookingsCount: event.bookings_count
+        });
+  
+        wx.hideToast();
+      }
+    });
   },
+  
+  
 
   /**
    * Lifecycle function--Called when page is initially rendered

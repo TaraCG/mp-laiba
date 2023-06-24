@@ -9,10 +9,13 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "LaiBa",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#d0cfd4",
+    "selectedColor": "#FF8551",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/events/index",
@@ -22,9 +25,9 @@
       },
       {
         "pagePath": "pages/events/form",
-        "text": "",
+        "text": "Add Event",
         "iconPath": "./pages/images/Add_event.png",
-        "selectedIconPath": "./pages/images/Add_event.png"
+        "selectedIconPath": "./pages/images/Add_event_selected.png"
       },
       {
         "pagePath": "pages/user/profile",

@@ -18,3 +18,14 @@ module.exports = {
   formatTime
 }
 
+function goToShow(id) {
+    console.log('ID:', id);
+    
+    wx.navigateTo({
+      url: `/pages/events/show?id=${id}`,
+    });
+  }
+  
+  module.exports = {
+    goToShow: goToShow
+  };
