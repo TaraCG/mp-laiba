@@ -3,24 +3,13 @@ const utils = require('../../utils/util');
 
 const app = getApp()
 
-function hasBooking(bookings, userId) {
-  for (let i = 0; i < bookings.length; i++) {
-    if (bookings[i].user_id === userId) {
-      return true;
-    }
-  }
-  return false;
-}
-
 Page({
   /**
    * Page initial data
    */
   data: {
-
+    
   },
-
-  hasBooking: hasBooking,
 
   goToShow(e) {
     const id = e.currentTarget.dataset.id;
@@ -90,7 +79,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    
   let page = this;
 
   // Get api data
@@ -123,6 +112,26 @@ Page({
    */
   onShow() {
 
+    // Save reference to page
+    // Get api data
+    this.getData()
+  },
+
+  getData() {
+    const page = this;
+    wx.request({
+      url: `${app.globalData.baseURL}/events`,
+      header: app.globalData.header,
+      method: 'GET',
+      success(res) {
+        // const events = res.data.events;
+        // Update local data
+        page.setData({
+          events: res.data.events
+        });
+        wx.hideToast();
+      }
+    });
   },
 
   /**

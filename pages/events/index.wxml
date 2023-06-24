@@ -10,6 +10,7 @@
 
 <!-- Event-cards -->
 <view class="container">
+
     <text class="p p-dark">Sort by</text>
     <block wx:if="{{events.length > 0}}">
         <view class="cards">

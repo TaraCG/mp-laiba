@@ -27,6 +27,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/landing/landing",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -1,6 +1,5 @@
 // index.js
 // 获取应用实例
-const app = getApp()
 
 Page({
   data: {
@@ -17,7 +16,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad() {
+  onLoad: function (options) {
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true
@@ -44,5 +43,5 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  }, 
 })
