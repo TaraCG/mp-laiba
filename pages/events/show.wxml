@@ -35,6 +35,6 @@
   
   <view class="container buttons flex">
     <button class="btn btn-filled" bindtap="goToForm">Edit</button>
-    <button class="btn btn-unfilled" bindtap="onDelete">Delete</button>
+    <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
   </view>
 </view>

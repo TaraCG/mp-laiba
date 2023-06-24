@@ -13,7 +13,7 @@
   <!-- <button bindtap="changeTitle">change title</button> -->
   <block wx:if="{{events.length > 0}}">
     <view class="cards">
-      <view class="card card-hor" wx:for="{{events}}" wx:for-item="event" bindtap="goToShow" data-id="{{id}}">
+      <view class="card card-hor" wx:for="{{events}}" wx:for-item="event" bindtap="goToEvent" data-id="{{event.id}}">
         <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1686893287975-5ca0c6b18bf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60')"></view>
           <view class="card-info">
             <view class="card-date">

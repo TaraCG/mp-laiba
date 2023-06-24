@@ -1,18 +1,17 @@
 // pages/index/index.js
 const app = getApp()
-
 Page({
   /**
    * Page initial data
    */
   data: {
-
+    
   },
 
-  goToShow(e) {
-    console.log('function goToShow');
+  goToEvent(e) {
+    const id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: `/pages/events/show?index=${e.currentTarget.dataset.index}`,
+      url: `/pages/events/show?id=${id}`,
     });
   },
 
@@ -20,7 +19,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
   },
 
   /**
@@ -35,19 +33,22 @@ Page({
    */
   onShow() {
     // Save reference to page
-    let page = this;
     // Get api data
+    this.getData()
+  },
+
+  getData() {
+    const page = this;
     wx.request({
-      url: "http://localhost:3000/api/v1/events",
+      url: `${app.globalData.baseURL}/events`,
+      header: app.globalData.header,
       method: 'GET',
       success(res) {
-        const events = res.data.events;
-
+        // const events = res.data.events;
         // Update local data
         page.setData({
-          events: events
+          events: res.data.events
         });
-
         wx.hideToast();
       }
     });

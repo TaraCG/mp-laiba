@@ -16,6 +16,10 @@ App({
 
   globalData: {
     userInfo: null,
+    header: {},
+    baseURL: "http://localhost:3000/api/v1",
+    // baserURL:" scallingo app link "
+    user: {}
     // events: [
     //   {title: "Event 01"},
     //   {title: "Event 02"},

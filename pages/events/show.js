@@ -1,14 +1,14 @@
 // pages/pages/show.js
+const app = getApp()
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    event: {}
   },
   goToForm(e) {
-    console.log('function goToForm');
     const index = e.currentTarget.dataset.index;
   
     // Check if it's an existing event
@@ -32,6 +32,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    console.log("options", options)
   },
 
   /**
@@ -45,9 +46,28 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    const page = this
+    this.getData();
   },
-
+   
+   getData() {
+      const page = this;
+      let id = page.options.id
+      wx.request({
+        url: `${app.globalData.baseURL}/events/${id}`,
+        header: app.globalData.header,
+        method: 'GET',
+        success(res) {
+          // const events = res.data.events;
+          // Update local data
+          const event = res.data
+          page.setData({
+            event: event
+          });
+          wx.hideToast();
+        }
+    })
+  },
   /**
    * Lifecycle function--Called when page hide
    */
@@ -84,8 +104,8 @@ Page({
   },
 
   deleteEvent(e) {
-    const id = this.data.event.id;
-
+    const id = this.data.event.id
+    console.log("this is the event to delete", id)
     // make a DELETE request
     wx.showModal({
       title: 'Are you sure?',
@@ -93,14 +113,20 @@ Page({
       success(res) {
         if (res.confirm){
           wx.request({
-            url: `http://localhost:3000/api/v1/events/${data.id}`,
+            url: `${app.globalData.baseURL}/events/${id}`,
+            header: app.globalData.header,
             method: 'DELETE',
             success(res) {
+              wx.showToast({
+                title: 'Event deleted!',
+                duration: 1000
+              })
               // redirect to index page when done
               wx.redirectTo({
-                url: '/pages/index/index'
+                url: '/pages/events/index'
               });
             }
+            
           });
         }
       }
