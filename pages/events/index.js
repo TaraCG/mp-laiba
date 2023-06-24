@@ -79,7 +79,20 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady() {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow() {
+      
   let page = this;
 
   // Get api data
@@ -100,39 +113,22 @@ Page({
   });
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady() {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow() {
-
-    // Save reference to page
-    // Get api data
-    this.getData()
-  },
-
-  getData() {
-    const page = this;
-    wx.request({
-      url: `${app.globalData.baseURL}/events`,
-      header: app.globalData.header,
-      method: 'GET',
-      success(res) {
-        // const events = res.data.events;
-        // Update local data
-        page.setData({
-          events: res.data.events
-        });
-        wx.hideToast();
-      }
-    });
-  },
+  // getData() {
+  //   const page = this;
+  //   wx.request({
+  //     url: `${app.globalData.baseURL}/events`,
+  //     header: app.globalData.header,
+  //     method: 'GET',
+  //     success(res) {
+  //       // const events = res.data.events;
+  //       // Update local data
+  //       page.setData({
+  //         events: res.data.events
+  //       });
+  //       wx.hideToast();
+  //     }
+  //   });
+  // },
 
   /**
    * Lifecycle function--Called when page hide

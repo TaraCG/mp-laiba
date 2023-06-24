@@ -39,7 +39,7 @@ Page({
   
     // Get api data
     wx.request({
-      url: `${getApp().globalData.baseUrl}events/${id}`,
+      url: `${app.globalData.baseUrl}events/${id}`,
       method: 'GET',
       success(res) {
         console.log(res);
@@ -69,28 +69,26 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    const page = this
-    this.getData();
   },
    
-   getData() {
-      const page = this;
-      let id = page.options.id
-      wx.request({
-        url: `${app.globalData.baseURL}/events/${id}`,
-        header: app.globalData.header,
-        method: 'GET',
-        success(res) {
-          // const events = res.data.events;
-          // Update local data
-          const event = res.data
-          page.setData({
-            event: event
-          });
-          wx.hideToast();
-        }
-    })
-  },
+  //  getData() {
+  //     const page = this;
+  //     let id = page.options.id
+  //     wx.request({
+  //       url: `${app.globalData.baseURL}/events/${id}`,
+  //       header: app.globalData.header,
+  //       method: 'GET',
+  //       success(res) {
+  //         // const events = res.data.events;
+  //         // Update local data
+  //         const event = res.data
+  //         page.setData({
+  //           event: event
+  //         });
+  //         wx.hideToast();
+  //       }
+  //   })
+  // },
   /**
    * Lifecycle function--Called when page hide
    */
@@ -136,7 +134,7 @@ Page({
       success(res) {
         if (res.confirm){
           wx.request({
-            url: `${app.globalData.baseURL}/events/${id}`,
+            url: `${app.globalData.baseUrl}events/${id}`,
             header: app.globalData.header,
             method: 'DELETE',
             success(res) {
@@ -145,7 +143,7 @@ Page({
                 duration: 1000
               })
               // redirect to index page when done
-              wx.redirectTo({
+              wx.switchTab({
                 url: '/pages/events/index'
               });
             }

@@ -1,18 +1,24 @@
 // pages/pages/create.js
+const app = getApp()
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    start_time: '2023-00-00', 
+    end_time: '2023-00-00', 
+    time: '00-00', 
+    title: "",
+    address:"",
+    description: "",
+    formData: {}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
   },
 
   /**
@@ -62,5 +68,48 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  bindDateChange(e) {
+    let {formData} = this.data
+    formData[e.currentTarget.dataset.field] = e.detail.value
+    this.setData({formData})
+  },  
+
+  setInputData(e) {
+    let {formData} = this.data
+    formData[e.currentTarget.dataset.field] = e.detail.value
+    this.setData({formData})
+  },
+
+    // New Event Submission
+  save(e) {
+    // Post data to API
+    const page = this
+    let event = this.data.formData
+    event.user_id = 1
+    console.log(event)
+    wx.request({
+      header: app.globalData.header,
+      url: `${app.globalData.baseUrl}events`,
+      method: 'POST',
+      data: {event: event},
+      success(res) {
+        console.log(res)
+        // redirect to index page when done
+        if(res.code === 422) {
+          wx.showModal({
+            title: 'error',
+            content: res.data.errors.join(','), 
+            showCancel: false,
+            confirmText: "OK"
+          })
+        }
+        else {
+          wx.switchTab({
+          url: "/pages/events/index"})
+        }
+      } 
+    }) 
+  },
 })

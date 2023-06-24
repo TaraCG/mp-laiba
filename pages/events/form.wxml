@@ -2,16 +2,27 @@
 <view class="container">
   <form bindsubmit="save">
     <view> Title </view>
-    <input type="text" name="title"/>
+    <input data-field="title" bindinput="setInputData" type="text" name="title"/>
 
     <view> About the Event </view>
-    <textarea name="body"/>
+    <textarea bindinput="setInputData" data-field="description" name="body"/>
 
-    <view> Date </view>
-    <input type="text" name="title"/>
+    <view>Start Time</view>
+      <picker mode="date" data-field="start_time" value="{{formData.start_time}}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange" >
+        <view class="picker">
+          <input value="{{formData.start_time}}"/>
+        </view>
+      </picker>
+
+      <view>End Time</view>
+      <picker mode="date" data-field="end_time" value="{{formData.end_time}}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange">
+      <view class="picker">
+        <input  value="{{formData.end_time}}"/>
+      </view>
+      </picker>
 
     <view> Address </view>
-    <input type="text" name="title"/>
+    <input data-field="address" bindinput="setInputData" type="text" name="title"/>
 
     <button class="btn btn-filled" form-type="submit"> Save</button>
   
