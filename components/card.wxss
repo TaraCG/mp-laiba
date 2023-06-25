@@ -19,7 +19,7 @@
     align-items: flex-start;
 }
 
-.card-ver {
+.container-horizontal .card-ver {
     width: 55%;
     margin-right: 40rpx;
     display: inline-block;

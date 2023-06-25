@@ -14,7 +14,7 @@
   <button class="category" style="background-color: #F59762;"bindtap="navigateToCategoryPage" data-category="music">Music</button>
   <button class="category" style="background-color: #29D697;"bindtap="navigateToCategoryPage" data-category="sports">Sports</button>
   <button class="category" style="background-color: #46CDFB;"bindtap="navigateToCategoryPage" data-category="nightlife">Nighlife</button>
-  <button class="category" style="background-color: #B2A4FF;"bindtap="navigateToCategoryPage" data-category="art">Art</button>
+  <button class="category" style="background-color: #ADA2FF;"bindtap="navigateToCategoryPage" data-category="art">Art</button>
 </scroll-view>
 
 

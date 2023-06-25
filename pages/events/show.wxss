@@ -48,7 +48,6 @@
   text-align: left;
 }
 
-
 .profile-btn {
   background-color: var(--accent-color-pink);
   color: var(--dark);  

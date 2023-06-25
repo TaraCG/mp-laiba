@@ -5,6 +5,7 @@
     "pages/events/index",
     "pages/events/show",
     "pages/events/form",
+    "pages/promoters/index",
     "pages/user/profile"
   ],
   "window": {
@@ -22,6 +23,11 @@
         "pagePath": "pages/events/index",
         "iconPath": "./pages/images/Calendar.png",
         "selectedIconPath": "./pages/images/Calendar_selected.png"
+      },
+      {
+        "pagePath": "pages/promoters/index",
+        "iconPath": "./pages/images/Explore_def.png",
+        "selectedIconPath": "./pages/images/Explore.png"
       },
       {
         "pagePath": "pages/events/form",

@@ -1,0 +1,39 @@
+<!--pages/promoters/index.wxml-->
+<!-- **Banner** -->
+<view>
+    <view class="banner banner-dark" style="background-image: url('https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');">
+        <text class="title">Best event organizers</text>
+        <text>They make your ideas become reality</text>
+    </view>
+</view>
+
+
+<!-- Promoter cards -->
+<view class="container">
+
+<text class="p p-dark">Sort by</text>
+<block wx:if="{{promoters.length > 0}}">
+    <view class="cards">
+        <view class="card card-hor" wx:for="{{promoters}}" wx:key="index" wx:for-item="promoter">
+            <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1687360441387-0179af118555?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=654&q=80')" bindtap="goToShow" data-id="{{promoter.id}}">
+                <text class="poster-details p">Details</text>
+            </view>
+            <view class="card-info-hor">
+                <view class="flex column">
+                    <text class="card-date">{{event.start_time}}</text>
+                    <text class="h3">{{promoter.nickname}}</text>
+                </view>
+                <button class="booking-button {{event.has_booking ? 'booking-button-going' : 'booking-button-attend'}}" bindtap="addBooking" data-eventid="{{event.id}}">
+                    {{ event.has_booking ? 'Going!!!' : 'Attend'}}
+                </button>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view class="flex column">
+        <text>No promoters available for hire yet. Check our events instead</text>
+        <navigator class="btn navigator-btn" open-type="switchTab" url="/pages/events/index">All events →</navigator>
+    </view>
+</block>
+</view>

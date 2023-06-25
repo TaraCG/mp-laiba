@@ -29,5 +29,6 @@
 }
 
 .title {
+  text-transform: capitalize;
   font-size: 1.8rem;
 }
