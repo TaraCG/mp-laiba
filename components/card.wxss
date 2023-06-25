@@ -1,9 +1,5 @@
-.container-horizontal {
-    white-space: nowrap;
-}
 
 .cards {
-    /* background-color: #f4edf7; */
     border-radius: 1rem;
 }
 
@@ -11,8 +7,7 @@
     background-color: var(--white);
     padding: 0.75rem;
     margin: .5rem 0;
-    overflow: hidden;
-    /* border-bottom: 1rpx solid var(--grey-light); */
+    overflow: hidden;    
     box-shadow: 0px 10px 35px rgba(87, 92, 138, 0.06);
     border-radius: 20rpx;
     display: flex;
@@ -26,7 +21,7 @@
 
 .card-ver {
     width: 55%;
-    margin-right: 10rpx;
+    margin-right: 40rpx;
     display: inline-block;
     flex-direction: column;
     height: 232px;

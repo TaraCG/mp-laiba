@@ -2,24 +2,27 @@
 
 <!-- User info -->
 <view class="container">
-    <view class="user flex column ai-c">
+<view class="temp">
+  <view class="user flex column ai-c">
         <view class="user-info flex column ai-c jc-c">
             <image class="avatar user-avatar" style="background-image: url('https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=719&q=80')" mode="" />
-            <text class="h1">User Name</text>
+            <text class="h1">Tallulah Doe</text>
         </view>
     </view>
 
     <!-- Event stats -->
     <view class="stats flex ai-c jc-c">
         <view class="item flex column ai-c">
-            <text class="p p-dark">3</text>
-            <text class="p p-light">Organized</text>
+            <text class="p">3</text>
+            <text class="p p-dark">Organized</text>
         </view>
         <view class="item flex column ai-c">
-            <text class="p p-dark">7</text>
-            <text class="p p-light">Attended</text>
+            <text class="p">7</text>
+            <text class="p p-dark">Attended</text>
         </view>
     </view>
+</view>
+
 
     <!-- Posted events -->
     <view class="posted-events">

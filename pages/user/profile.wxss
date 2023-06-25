@@ -1,6 +1,9 @@
 /* pages/user/profile.wxss */
 .user {
   margin-bottom: .8em;
+  background-color: var(--white);
+  border-radius: 0 0 20rpx 20rpx;
+  box-shadow: 0px 10px 35px rgba(87, 92, 138, 0.05);
 }
 
 .stats {
@@ -19,19 +22,14 @@
     margin-bottom: 1.2em;
 }
 
-.container-horizontal {
-    white-space: nowrap;
-    margin-bottom: 1.8em;
-}
-
 .attendees {
     position: absolute;
     bottom: 2%;
 }
 
 .attendees text {
-    color: var(--accent-color);
-    font-weight: 500;
+    color: var(--accent-color-blue);
+    font-weight: 700;
     font-size: .8rem;
     margin-left: 1em;
 }

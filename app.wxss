@@ -1,4 +1,6 @@
 /**app.wxss**/
+/* @import './node_modules/weui-wxss/src/style/'; */
+
 @import "./components/avatar.wxss";
 @import "./components/banner.wxss";
 @import "./components/card.wxss";
@@ -14,11 +16,20 @@ page{
   font-size: 32rpx;
   line-height: 1.3;
   overflow-x: hidden;
+  background-color: var(--background-color);
+}
+
+button {
+  display: inline-block;
 }
 
 .container {
   max-width: 90%;
   margin: 0 auto;
+}
+
+.container-horizontal {
+  white-space: nowrap;
 }
 
 /* Flex-properties */

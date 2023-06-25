@@ -48,7 +48,8 @@ Page({
         // Update local data
         page.setData({
           event: event,
-          bookingsCount: event.bookings_count
+          bookingsCount: event.bookings_count,
+          organizer: event.organizer.nickname
         });
   
         wx.hideToast();

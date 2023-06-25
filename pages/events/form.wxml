@@ -1,30 +1,32 @@
-<!--pages/pages/create.wxml-->
-<view class="container">
+<view class="container flex column ai-c jc-c">
+  <text class="h1">Create New Event</text>
   <form bindsubmit="save">
-    <view> Title </view>
-    <input data-field="title" bindinput="setInputData" type="text" name="title"/>
+    <view class="input-container">
+      <input id="title" placeholder="Title" data-field="title" bindinput="setInputData" type="text" name="title" />
+    </view>
 
-    <view> About the Event </view>
-    <textarea bindinput="setInputData" data-field="description" name="body"/>
+    <view class="input-container">
+      <textarea id="description" placeholder="Description" bindinput="setInputData" data-field="description" name="body"></textarea>
+    </view>
 
-    <view>Start Time</view>
-      <picker mode="date" data-field="start_time" value="{{formData.start_time}}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange" >
-        <view class="picker">
-          <input value="{{formData.start_time}}"/>
-        </view>
-      </picker>
-
-      <view>End Time</view>
-      <picker mode="date" data-field="end_time" value="{{formData.end_time}}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange">
-      <view class="picker">
-        <input  value="{{formData.end_time}}"/>
+    <view class="time-inputs">
+      <view class="input-container">
+        <picker mode="date" data-field="start_time" value="{{formData.start_time}}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange">
+          <input id="start-time" placeholder="Start Time" value="{{formData.start_time}}" disabled />
+        </picker>
       </view>
-      </picker>
+      <view class="input-container">
+        <picker mode="date" data-field="end_time" value="{{formData.end_time}}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange">
+          <input id="end-time" placeholder="End Time" value="{{formData.end_time}}" disabled />
+        </picker>
+      </view>
+    </view>
 
-    <view> Address </view>
-    <input data-field="address" bindinput="setInputData" type="text" name="title"/>
+    <view class="input-container">
+      <icon class="input-icon" type="location"/>
+      <input id="address" data-field="address" placeholder="Address" bindinput="setInputData" type="text" name="title" />
+    </view>
 
-    <button class="btn btn-filled" form-type="submit"> Save</button>
-  
+    <button class="btn btn-filled" form-type="submit">Save</button>
   </form>
 </view>

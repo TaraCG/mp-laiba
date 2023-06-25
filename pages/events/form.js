@@ -77,10 +77,31 @@ Page({
   },  
 
   setInputData(e) {
-    let {formData} = this.data
-    formData[e.currentTarget.dataset.field] = e.detail.value
-    this.setData({formData})
+    const { field, value } = e.currentTarget.dataset;
+    const { formData } = this.data;
+  
+    if (field === 'title' && value.length > 50) {
+      wx.showToast({
+        title: 'Title cannot exceed 50 characters',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+  
+    if (field === 'description' && value.length > 200) {
+      wx.showToast({
+        title: 'Description cannot exceed 200 characters',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+  
+    formData[field] = value;
+    this.setData({ formData });
   },
+  
 
     // New Event Submission
   save(e) {

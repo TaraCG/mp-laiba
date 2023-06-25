@@ -1,39 +1,54 @@
+<!-- Carousel -->
 <view class="banner" style="background-image: url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');" bindtap="openFullImage">
 </view>
 
-<view class="container flex column">
+<view class="container flex column ai-c">
+  <!-- Attendees -->
+  <view class="attendees flex ai-c jc-c">
+    <view>
+      <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')" mode="" />
+      <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+      <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
+    </view>
+    <text>20 going</text>
+  </view>
+
+  <!-- Title -->
   <text class="h1">{{event.title}}</text>
+
+  <!-- Event Details -->
   <view class="info flex column jc-sb">
     <view class="details flex">
-      <image class="details-img" src="../images/Date.png" mode="widthFix"/>
+      <image class="details-img" src="../images/Date.png" mode="widthFix" />
       <view class="details-text flex column">
         <text class="label p p-dark">Date</text>
         <text class="value p p-light">{{event.start_time}}</text>
       </view>
     </view>
     <view class="details flex">
-      <image class="details-img" src="../images/Location.png" mode="widthFix"/>
+      <image class="details-img" src="../images/Location.png" mode="widthFix" />
       <view class="details-text flex column">
         <text class="label p p-dark">Address</text>
         <text class="value p p-light">{{event.address}}</text>
       </view>
     </view>
-    <view class="details flex">
-      <image class="details-img" src="../images/Attendees.png" mode="widthFix"/>
+    <view class="details details-organizer flex">
+      <image class="details-img" src="../images/Attendees.png" mode="widthFix" />
       <view class="details-text flex column">
-        <text class="label p p-dark">Attendees</text>
-        <text class="value p p-light">{{bookingsCount}}</text>
+        <text class="label p p-dark">Organizer</text>
+        <text class="value p p-light">{{organizer}}</text>
       </view>
+      <button class="profile-btn">Profile</button>
     </view>
   </view>
-
+  <!-- About -->
   <view class="event-description flex column">
     <text class="h2">About the Event</text>
     <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
   </view>
 
-  
-  <view class="container buttons flex">
+  <!-- Buttons -->
+  <view class="buttons flex">
     <button class="btn btn-filled" bindtap="goToForm">Edit</button>
     <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
   </view>

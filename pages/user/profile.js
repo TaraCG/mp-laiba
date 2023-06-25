@@ -24,25 +24,25 @@ Page({
     let page = this;
 
     // Get API data
-    // wx.request({
-    //   url: `${getApp().globalData.baseUrl}users/${id}`,
-    //   method: 'GET',
-    //   success(res) {
-    //     console.log(res);
-    //     const user = res.data;
+    wx.request({
+      url: `${getApp().globalData.baseUrl}users/${id}`,
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        const user = res.data;
 
-    //     // Update local data
-    //     page.setData({
-    //         user: user,
-    //         createdEvents: user.events,
-    //         createdEventsCount: user.events.length,
-    //         bookings: user.bookings,
-    //         bookingsCount: user.bookings.length
-    //     });
+        // Update local data
+        page.setData({
+            user: user,
+            createdEvents: user.events,
+            createdEventsCount: user.events.length,
+            bookings: user.bookings,
+            bookingsCount: user.bookings.length
+        });
 
-    //     wx.hideToast();
-    //   }
-    // });
+        wx.hideToast();
+      }
+    });
   },
 
   /**

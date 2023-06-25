@@ -11,6 +11,15 @@ Page({
     
   },
 
+  navigateToCategoryPage: function(event) {
+    const category = event.currentTarget.dataset.category;
+    const url = `/pages/events/category?category=${category}`;
+    console.log(url)
+    wx.navigateTo({
+      url: url,
+    });
+  },
+  
   goToShow(e) {
     const id = e.currentTarget.dataset.id;
     utils.goToShow(id);

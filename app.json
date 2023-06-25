@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/landing/landing",
+    "pages/events/category",
     "pages/events/index",
     "pages/events/show",
     "pages/events/form",
@@ -19,19 +20,16 @@
     "list": [
       {
         "pagePath": "pages/events/index",
-        "text": "Home",
         "iconPath": "./pages/images/Calendar.png",
         "selectedIconPath": "./pages/images/Calendar_selected.png"
       },
       {
         "pagePath": "pages/events/form",
-        "text": "Add Event",
         "iconPath": "./pages/images/Add_event.png",
         "selectedIconPath": "./pages/images/Add_event_selected.png"
       },
       {
         "pagePath": "pages/user/profile",
-        "text": "Profile",
         "iconPath": "./pages/images/Profile.png",
         "selectedIconPath": "./pages/images/Profile_selected.png"
       }

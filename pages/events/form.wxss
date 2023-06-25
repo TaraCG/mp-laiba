@@ -1,8 +1,14 @@
 /* pages/pages/create.wxss */
 input, 
 textarea {
-  border: 1px solid #E4DFDF;
-  border-radius: 12px;
+  border: 1px solid var(--primary-color);
+  background-color: rgb(255, 255, 255, .2);
+  border-radius: 20rpx;
   padding: 10rpx 20rpx;
   margin-bottom: 15rpx;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 2%;
 }

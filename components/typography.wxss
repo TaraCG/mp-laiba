@@ -1,16 +1,18 @@
 .h1,
 .h2, 
-h3,
-p{
+.h3
+{
   line-height: 1.15;
   margin-top: 0;
-  margin-bottom: 0.7rem;
+  margin-bottom: .5em;
 }
 
 .h1 {
   font-size: 48rpx;
   font-weight: 700;
   color: var(--dark);
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .h2 {

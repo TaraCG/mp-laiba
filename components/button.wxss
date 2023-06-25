@@ -1,6 +1,5 @@
 .btn {
   position: relative;
-  display: inline-block;
   margin-top: .5rem;
   border: 0;
   text-align: center;
@@ -19,7 +18,6 @@
 }
 
 .booking-button {
-  display: inline-block;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -28,7 +26,8 @@
 }
 
 .booking-button-going {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-blue);
+    color: var(--white);
 }
 
 .booking-button-attend {
