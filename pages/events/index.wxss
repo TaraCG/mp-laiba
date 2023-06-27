@@ -13,3 +13,9 @@
   border-radius: 100rpx;
   text-align: center;
 }
+
+.category image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 5rpx;
+}

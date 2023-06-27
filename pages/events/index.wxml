@@ -10,11 +10,21 @@
 
 <!-- Category -->
 <scroll-view class="container container-horizontal category-buttons flex ai-с jc-sb" scroll-x="{{true}}">
-  <button class="category" style="background-color: #F0635A;"bindtap="navigateToCategoryPage" data-category="food">Food</button>
-  <button class="category" style="background-color: #F59762;"bindtap="navigateToCategoryPage" data-category="music">Music</button>
-  <button class="category" style="background-color: #29D697;"bindtap="navigateToCategoryPage" data-category="sports">Sports</button>
-  <button class="category" style="background-color: #46CDFB;"bindtap="navigateToCategoryPage" data-category="nightlife">Nighlife</button>
-  <button class="category" style="background-color: #ADA2FF;"bindtap="navigateToCategoryPage" data-category="art">Art</button>
+  <button class="category" style="background-color: #F0635A;"bindtap="navigateToCategoryPage" data-category="food">
+  <image src="/pages/images/category-icon-food.png" mode=""/>
+  Food</button>
+  <button class="category" style="background-color: #F59762;"bindtap="navigateToCategoryPage" data-category="music">
+  <image src="/pages/images/category-icon-music-guitar.png" mode=""/>
+  Music</button>
+  <button class="category" style="background-color: #29D697;"bindtap="navigateToCategoryPage" data-category="sports">
+  <image src="/pages/images/category-icon-football-ball.png" mode=""/>
+  Sports</button>
+  <button class="category" style="background-color: #46CDFB;"bindtap="navigateToCategoryPage" data-category="nightlife">
+  <image src="/pages/images/category-icon-nightlife.png" mode=""/>
+  Nighlife</button>
+  <button class="category" style="background-color: #ADA2FF;"bindtap="navigateToCategoryPage" data-category="art">
+  <image src="/pages/images/category-icon-drawing palette.png" mode=""/>
+  Art</button>
 </scroll-view>
 
 
