@@ -4,7 +4,8 @@
     "pages/pages/index",
     "pages/pages/show",
     "pages/pages/create",
-    "pages/user/profile"
+    "pages/user/profile",
+    "pages/eventsIndex/eventsIndex"
   ],
   "window":{
     "backgroundTextStyle":"light",

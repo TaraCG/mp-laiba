@@ -8,12 +8,15 @@ App({
         wx.request ({
           //url: 'http://localhost:3000/api/v1/login',
           url: `${app.globalData.baseUrl}/login`,
-          method: 'post',
+          method: 'POST',
           data: { code: res.code }, // pass code in request body
           success(loginRes) {
             app.globalData.user = loginRes.data.user
             app.globalData.header = loginRes.data.headers
             console.log(loginRes) // { data: { headers: { "X-USER-TOKEN": <User Token> }, user: <User Object> }, ... }
+          },
+          fail(loginErr){
+            console.error({loginErr})
           }
         })
       }
@@ -24,6 +27,6 @@ App({
     user: null,
     header: null,
     baseUrl: 'http://localhost:3000/api/v1'
-    //baseUrl: name of our APP
+    //baseUrl: 'https://name of our APP'
   }
 })
