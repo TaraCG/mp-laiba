@@ -41,3 +41,18 @@
   margin-bottom: 1.2em;
   text-align: center;
 }
+
+.card-info,
+.card-info-hor {
+    overflow: hidden;
+}
+
+.card-info .h3,
+.card-info .card-address,
+.card-info-hor .h3,
+.card-info-hor .card-address 
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -53,11 +53,13 @@
     height: 100%;
 }
 
-.card-info {
+.card-info, {
     overflow: hidden;
 }
 
-.card-info .h3 {
+.card-info .h3,
+.card-info .card-address
+{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

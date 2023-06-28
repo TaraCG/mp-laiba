@@ -8,15 +8,14 @@ Page({
   data: {
     event: {}
   },
+
   goToForm(e) {
-    const index = e.currentTarget.dataset.index;
-  
-    // Check if it's an existing event
-    if (index) {
-      wx.navigateTo({
-        url: `/pages/events/form?index=${index}&edit=true`
-      });
-    }
+    console.log(e)
+    let page = this
+    wx.setStorageSync('editedId', this.data.event.id);
+    wx.switchTab({
+      url: '/pages/events/form',
+    });
   },
 
   openFullImage: function () {
@@ -33,7 +32,7 @@ Page({
    */
 
   onLoad: function (options) {
-    console.log('inside stories/show, options:', options);
+    console.log('inside events/show, options:', options);
     const id = options.id;
     let page = this; // Declare the `page` variable here
   
@@ -71,28 +70,7 @@ Page({
    */
   onShow() {
   },
-   
-  //  getData() {
-  //     const page = this;
-  //     let id = page.options.id
-  //     wx.request({
-  //       url: `${app.globalData.baseURL}/events/${id}`,
-  //       header: app.globalData.header,
-  //       method: 'GET',
-  //       success(res) {
-  //         // const events = res.data.events;
-  //         // Update local data
-  //         const event = res.data
-  //         page.setData({
-  //           event: event
-  //         });
-  //         wx.hideToast();
-  //       }
-  //   })
-  // },
-  /**
-   * Lifecycle function--Called when page hide
-   */
+
   onHide() {
 
   },

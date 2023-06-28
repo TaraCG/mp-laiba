@@ -49,7 +49,8 @@ Page({
           createdEvents: user.events,
           createdEventsCount: user.events.length,
           bookings: user.bookings,
-          bookingsCount: user.bookings.length
+          bookingsCount: user.bookings.length,
+          bookedEvents: user.booked_events,
         });
   
         wx.hideToast();
