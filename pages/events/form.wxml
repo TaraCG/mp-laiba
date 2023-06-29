@@ -1,5 +1,7 @@
 <view class="container flex column ai-c jc-c">
   <text class="h1">Create New Event</text>
+  <button type="btn btn-filled" bindtap="listenerBtnChooseImage">Upload Poster</button> 
+  <image src="{{src}}" mode="aspecFill" bindlongtap="imgLongTap"/>
   <form bindsubmit="save">
     <view class="input-container">
       <input id="title" placeholder="Title" data-field="title" bindinput="setInputData" type="text" name="title" />

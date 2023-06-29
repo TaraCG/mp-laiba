@@ -2,6 +2,7 @@
 .category-buttons {
   margin-top: -60rpx;
   margin-bottom: 1em;
+  justify-content: center;
 }
 
 .category-buttons .category {
@@ -15,7 +16,8 @@
 }
 
 .category image {
-  width: 40rpx;
-  height: 40rpx;
+  color:white;
+  width: 25rpx;
+  height: 25rpx;
   margin-top: 5rpx;
 }
