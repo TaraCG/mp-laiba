@@ -51,6 +51,7 @@ Page({
           bookings: user.bookings,
           bookingsCount: user.bookings.length,
           bookedEvents: user.booked_events,
+          recievedBookings: user.recieved_bookings.length
         });
   
         wx.hideToast();

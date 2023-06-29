@@ -25,7 +25,7 @@
 
 <!-- For_hire -->
   <view class="for-hire" wx:if="{{!user.for_hire}}">
-    <text>You have {{4 - createdEventsCount}} event(s) to organize and {{50 - bookingsCount}} booking(s) to get before you can list your services for hire.</text>
+    <text>You have {{4 - createdEventsCount}} event(s) to organize and {{20 - recievedBookings}} booking(s) to get before you can list your services for hire.</text>
   </view>
   <view wx:else>
     <text>List your services for hire</text>

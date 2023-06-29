@@ -53,7 +53,7 @@
     height: 100%;
 }
 
-.card-info, {
+.card-info {
     overflow: hidden;
 }
 
