@@ -16,19 +16,6 @@
   border-radius: 100rpx;
 }  
 
-/* .category-buttons .category {
-  display: inline-block;
-  width: 15%;
-  height: 50rpx;
-  padding: .7em 1.7em;
-  margin-right: 8rpx;
-  background-color: aqua;
-  font-size: 28rpx;
-  color: var(--white);
-  border-radius: 100rpx;
-  text-align: center;
-} */
-
 .category image {
   width: 40rpx;
   height: 40rpx;
