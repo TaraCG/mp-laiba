@@ -8,6 +8,7 @@
     "pages/promoters/index",
     "pages/promoters/show",
     "pages/user/profile"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
