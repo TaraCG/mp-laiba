@@ -1,15 +1,77 @@
-// pages/create.js
-const app = getApp();
 
+// pages/pages/create.js
+const app = getApp()
 Page({
   /**
    * Page initial data
    */
   data: {
+    start_time: '2023-00-00', 
+    end_time: '2023-00-00', 
+    time: '00-00', 
+    title: "",
+    address:"",
+    description: "",
     formData: {},
-    category: ["art", "food", "sports", "nightlife", "music"],
-    resetData: true,
+    src: [],
+    categories: ["Food", "Sports", "Music", "Nightlife", "Art"],
   },
+  listenerBtnChooseImage: function () {
+    const page = this
+    // Upload an image
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ['image'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: 'back',
+      success(res) {
+        console.log(res.tempFiles)
+        const filePath = res.tempFiles[0].tempFilePath
+        wx.uploadFile({
+          url:`${app.globalData.baseUrl}events/${id}/upload_image`,
+          filePath: filePath,
+          name:'file',
+          success:function(res){
+            console.log(res)
+          }
+        })
+      }
+    })
+   },
+    // adding this line below to have upload function and save images into cloudinary
+    //    
+  //  },
+
+  imgLongTap: function (){
+    // Save image to album
+    wx.saveImageToPhotosAlbum({
+      filePath: this.data.src,
+
+      success(res) {
+        wx.showToast({
+          title: 'Save',
+          icon: 'success',
+          duration: 1500
+        })
+      console.log('success')
+    }
+  })
+},
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad(options) {
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady() {
+
+  },
+
   /**
    * Lifecycle function--Called when page show
    */

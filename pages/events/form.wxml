@@ -1,5 +1,9 @@
 <view class="container flex column ai-c jc-c">
-<text class="h1">Events Form</text>
+
+  <text class="h1">Create New Event</text>
+  <button type="btn btn-filled" bindtap="listenerBtnChooseImage">Upload Poster</button> 
+  <image src="{{src}}" mode="aspecFill" bindlongtap="imgLongTap"/>
+
   <form bindsubmit="save">
     <view class="input-container">
       <input id="title" placeholder="Title" value="{{ formData.title }}" bindinput="setInputData" type="text" name="title" data-field ="title" />
@@ -33,6 +37,17 @@
       <input id="address" placeholder="Address" value="{{ formData.address }}" bindinput="setInputData" type="text" name="address" data-field ="address" />
     </view>
 
-    <button class="btn btn-filled" form-type="submit">Submit</button>
+    <!-- <view class="input-container">
+      <icon class="input-icon" type="category"/>
+      <view class="category_selector"></view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{categories}}">
+        <view class="picker">
+          Category: {{categories[index]}}
+        </view>
+      </picker>
+  </view> -->
+
+    <button class="btn btn-filled" form-type="submit">Save</button>
+
   </form>
 </view>
