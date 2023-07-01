@@ -1,6 +1,4 @@
-// pages/user/profile.js
-const utils = require('../../utils/util');
-
+// pages/promoters/index.js
 Page({
 
   /**
@@ -10,16 +8,20 @@ Page({
 
   },
 
-
-  goToShow(e) {
+  goToPromoter(e){
+    console.log(e)
     const id = e.currentTarget.dataset.id;
-    utils.goToShow(id);
+    const url = `/pages/promoters/show?id=${id}`
+    console.log(url)
+    wx.navigateTo({
+      url: url,
+    });
   },
-
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad() {
+  onLoad(options) {
+
   },
 
   /**
@@ -32,34 +34,24 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function (options) {
-
+  onShow() {
     let page = this;
-  
+
     // Get API data
     wx.request({
-      url: `${getApp().globalData.baseUrl}users/${getApp().globalData.userId}`,
+      url: `${getApp().globalData.baseUrl}users/promoters`,
       method: 'GET',
       success(res) {
-        console.log(res);
-        const user = res.data;
-  
-        // Update local data
+        // Assuming the response data is an array of promoters
+        const promoters = res.data;
+        console.log(promoters);
+        // Update the data in the component
         page.setData({
-          user: user,
-          createdEvents: user.events,
-          createdEventsCount: user.events.length,
-          bookings: user.bookings,
-          bookingsCount: user.bookings.length,
-          bookedEvents: user.booked_events,
-          recievedBookings: user.recieved_bookings.length
+          promoters: promoters,
         });
-  
-        wx.hideToast();
-      }
+      },
     });
   },
-  
 
   /**
    * Lifecycle function--Called when page hide

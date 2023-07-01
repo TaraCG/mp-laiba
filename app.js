@@ -1,4 +1,5 @@
 // app.js
+
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -13,11 +14,11 @@ App({
       }
     })
   },
+
   globalData: {
     userInfo: null,
-    events: [
-      {title: "Event 01"},
-      {title: "Event 02"},
-    ]
+    header: {},
+    baseUrl: 'http://localhost:3000/api/v1/',
+    userId: 1,
   }
 })

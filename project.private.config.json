@@ -9,14 +9,28 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/pages/index",
+          "pathName": "pages/events/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/events/form",
+          "pathName": "pages/events/show",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/landing/landing",
           "query": "",
           "launchMode": "default",
           "scene": null

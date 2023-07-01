@@ -1,12 +1,18 @@
 /* pages/pages/create.wxss */
-input {
-  border: solid 1px #0f0f0f;
-  margin-bottom: 30rpx;
-  padding: 10rpx 20rpx;
+.h1{
+  margin-top: 2rem;
 }
 
+input, 
 textarea {
-  border: solid 1px #0f0f0f;
+  color: car(--grey-light);
+  background-color: rgb(255, 255, 255, .8);
+  border-radius: 20rpx;
+  padding: 20rpx 40rpx;
   margin-bottom: 15rpx;
-  padding: 10rpx;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 2%;
 }

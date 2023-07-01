@@ -1,6 +1,4 @@
-// pages/user/profile.js
-const utils = require('../../utils/util');
-
+// pages/events/category.js
 Page({
 
   /**
@@ -10,16 +8,11 @@ Page({
 
   },
 
-
-  goToShow(e) {
-    const id = e.currentTarget.dataset.id;
-    utils.goToShow(id);
-  },
-
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad() {
+  onLoad(options) {
+
   },
 
   /**
@@ -32,35 +25,30 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function (options) {
-
+  onShow: function() {
+    const category = this.options.category;
     let page = this;
-  
-    // Get API data
+
     wx.request({
-      url: `${getApp().globalData.baseUrl}users/${getApp().globalData.userId}`,
+      url: `${getApp().globalData.baseUrl}events/category`,
       method: 'GET',
-      success(res) {
-        console.log(res);
-        const user = res.data;
-  
-        // Update local data
+      data: {
+        category: category
+      },
+      success: function(res) {
+        console.log(res.data); // Verify the response data
+        const events = res.data.events
         page.setData({
-          user: user,
-          createdEvents: user.events,
-          createdEventsCount: user.events.length,
-          bookings: user.bookings,
-          bookingsCount: user.bookings.length,
-          bookedEvents: user.booked_events,
-          recievedBookings: user.recieved_bookings.length
-        });
-  
-        wx.hideToast();
+          category: category,
+          events: events
+        })
+      },
+      fail: function(error) {
+        console.error(error);
       }
     });
   },
   
-
   /**
    * Lifecycle function--Called when page hide
    */

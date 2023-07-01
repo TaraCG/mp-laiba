@@ -1,19 +1,38 @@
-<!--pages/pages/create.wxml-->
-<view class="container">
+<view class="container flex column ai-c jc-c">
+<text class="h1">Events Form</text>
   <form bindsubmit="save">
-    <view> Title </view>
-    <input type="text" name="title"/>
+    <view class="input-container">
+      <input id="title" placeholder="Title" value="{{ formData.title }}" bindinput="setInputData" type="text" name="title" data-field ="title" />
+    </view>
 
-    <view> About the Event </view>
-    <textarea name="body"/>
+    <view class="input-container">
+      <textarea id="description" placeholder="Description" value="{{ formData.description }}" bindinput="setInputData" name="description" data-field ="description" ></textarea>
+    </view>
 
-    <view> Date </view>
-    <input type="text" name="title"/>
+    <view class="input-container">
+      <picker mode="selector" range="{{ category }}" value="{{ formData.categoryIndex }}" bindchange="bindCategoryChange" data-field ="category" >
+        <view>Category{{category[formData.categoryIndex]}}</view>
+        <input id="category" placeholder="Category" bindchange="bindCategoryChange" value="{{ formData.category }}" disabled />
+      </picker>
+    </view>
 
-    <view> Address </view>
-    <input type="text" name="title"/>
+    <view class="time-inputs">
+      <view class="input-container">
+        <picker mode="date" value="{{ formData.start_time }}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange" data-field="start_time">
+          <input id="start-time" placeholder="Start Time" value="{{ formData.start_time }}" disabled />
+        </picker>
+      </view>
+      <view class="input-container">
+        <picker mode="date" value="{{ formData.end_time }}" start="2023-06-24" end="2023-12-31" bindchange="bindDateChange" data-field="end_time">
+          <input id="end-time" placeholder="End Time" value="{{ formData.end_time }}" disabled />
+        </picker>
+      </view>
+    </view>
 
-    <button class="btn btn-filled" form-type="submit"> Save</button>
-  
+    <view class="input-container">
+      <input id="address" placeholder="Address" value="{{ formData.address }}" bindinput="setInputData" type="text" name="address" data-field ="address" />
+    </view>
+
+    <button class="btn btn-filled" form-type="submit">Submit</button>
   </form>
 </view>

@@ -15,5 +15,24 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime
+  formatTime,
+  goToShow,
+  goToPromoter
 }
+
+function goToShow(id) {
+    console.log('ID:', id);
+    
+    wx.navigateTo({
+      url: `/pages/events/show?id=${id}`,
+    });
+  }
+
+  function goToPromoter(e){
+
+    wx.navigateTo({
+      url: `/pages/promoters/show?id=${e}`,
+    });
+  }
+
+

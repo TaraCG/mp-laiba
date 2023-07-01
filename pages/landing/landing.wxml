@@ -5,7 +5,7 @@
     <text class="slogan">我们一起来吧!</text>
   </view>
     <navigator open-type="switchTab" url="/pages/events/index">
-      Check All Events <i class="fa-light fa-arrow-right" style="color: #050505;"></i>
+      Check All Events →
     </navigator>
 </view>
 
