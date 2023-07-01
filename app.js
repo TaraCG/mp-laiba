@@ -14,7 +14,7 @@ App({
           success(loginRes) {
             app.globalData.user = loginRes.data.user
             app.globalData.header = loginRes.data.headers
-            console.log(loginRes) // { data: { headers: { "X-USER-TOKEN": <User Token> }, user: <User Object> }, ... }
+            console.log(123,loginRes.data.headers) // { data: { headers: { "X-USER-TOKEN": <User Token> }, user: <User Object> }, ... }
           },
           fail(loginErr){
             console.error({loginErr})
@@ -27,8 +27,8 @@ App({
   globalData: {
     userInfo: null,
     user: null,
-    header: null,
-    baseUrl: 'http://localhost:3000/api/v1'
+    header: {},
+    baseUrl: 'http://localhost:3000/api/v1/'
     //baseUrl: 'https://name of our APP'
   }
 })
