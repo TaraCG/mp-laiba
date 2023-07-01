@@ -53,7 +53,7 @@
     </view>
 
     <!-- Buttons -->
-    <view class="buttons flex">
+    <view wx:if="{{event.can_edit}}" class="buttons flex">
       <button class="btn btn-filled" bindtap="goToForm">Edit</button>
       <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
     </view>

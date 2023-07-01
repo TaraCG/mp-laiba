@@ -108,6 +108,7 @@ Page({
   wx.request({
     url: `${getApp().globalData.baseUrl}events`,
     method: 'GET',
+    header: getApp().globalData.header,
     success(res) {
       const events = res.data.events;
       console.log(events)
