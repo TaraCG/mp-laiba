@@ -10,6 +10,7 @@ Page({
 
   },
 
+
   goToShow(e) {
     const id = e.currentTarget.dataset.id;
     utils.goToShow(id);
@@ -32,7 +33,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function (options) {
-    console.log('inside profile.js, options:', options);
+
     let page = this;
   
     // Get API data

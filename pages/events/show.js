@@ -1,5 +1,7 @@
-// pages/pages/show.js
-const app = getApp()
+// pages/events/show.js
+const { goToPromoter } = require('../../utils/util');
+const app = getApp();
+
 Page({
 
   /**
@@ -16,6 +18,13 @@ Page({
     wx.switchTab({
       url: '/pages/events/form',
     });
+  },
+  
+  goToPromoter(e) {
+    console.log(e)
+    const id = e.currentTarget.dataset.id;
+    console.log(id)
+    goToPromoter(id);
   },
 
   openFullImage: function () {
@@ -48,7 +57,7 @@ Page({
         page.setData({
           event: event,
           bookingsCount: event.bookings_count,
-          organizer: event.organizer.nickname
+          promoter: event.promoter
         });
   
         wx.hideToast();

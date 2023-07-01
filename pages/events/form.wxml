@@ -2,17 +2,17 @@
 <text class="h1">Events Form</text>
   <form bindsubmit="save">
     <view class="input-container">
-      <input id="title" placeholder="Title" value="{{ formData.title }}" bindinput="setInputData" type="text" name="title" />
+      <input id="title" placeholder="Title" value="{{ formData.title }}" bindinput="setInputData" type="text" name="title" data-field ="title" />
     </view>
 
     <view class="input-container">
-      <textarea id="description" placeholder="Description" value="{{ formData.description }}" bindinput="setInputData" name="description"></textarea>
+      <textarea id="description" placeholder="Description" value="{{ formData.description }}" bindinput="setInputData" name="description" data-field ="description" ></textarea>
     </view>
 
     <view class="input-container">
-      <picker mode="selector" range="{{ category }}" value="{{ formData.categoryIndex }}" bindchange="bindCategoryChange">
+      <picker mode="selector" range="{{ category }}" value="{{ formData.categoryIndex }}" bindchange="bindCategoryChange" data-field ="category" >
         <view>Category{{category[formData.categoryIndex]}}</view>
-        <!-- <input id="category" placeholder="Category" bindchange="bindCategoryChange" value="{{ formData.category }}" disabled /> -->
+        <input id="category" placeholder="Category" bindchange="bindCategoryChange" value="{{ formData.category }}" disabled />
       </picker>
     </view>
 
@@ -30,7 +30,7 @@
     </view>
 
     <view class="input-container">
-      <input id="address" placeholder="Address" value="{{ formData.address }}" bindinput="setInputData" type="text" name="address" />
+      <input id="address" placeholder="Address" value="{{ formData.address }}" bindinput="setInputData" type="text" name="address" data-field ="address" />
     </view>
 
     <button class="btn btn-filled" form-type="submit">Submit</button>

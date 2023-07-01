@@ -5,55 +5,56 @@
 <view class="container flex column ai-c">
   <!-- Attendees -->
   <view class="attendees flex ai-c jc-c">
-    <view>
-      <!-- <image class="avatar avatar-bordered" style="background-image: url('')" mode="" /> -->
-    </view>
-    <text  wx:if="{{bookingsCount % 10 == 1 && bookingsCount != 11}}">
-        {{bookingsCount}} person going
-      </text>
-      <text wx:else>
-        {{bookingsCount}} people going
-      </text>
-  </view>
-
-  <!-- Title -->
-  <text class="h1">{{event.title}}</text>
-
-  <!-- Event Details -->
-  <view class="info flex column jc-sb">
-    <view class="details flex">
-      <image class="details-img" src="../images/Date.png" mode="widthFix" />
-      <view class="details-text flex column">
-        <text class="label p p-dark">Date</text>
-        <text class="value p p-light">{{event.start_time}}</text>
-      </view>
-    </view>
-    <view class="details flex">
-      <image class="details-img" src="../images/Location.png" mode="widthFix" />
-      <view class="details-text flex column">
-        <text class="label p p-dark">Address</text>
-        <text class="value p p-light">{{event.address}}</text>
-      </view>
-    </view>
-    <view class="details details-organizer flex">
-      <image class="details-img" src="../images/Attendees.png" mode="widthFix" />
-      <view class="details-text flex column">
-        <text class="label p p-dark">Organizer</text>
-        <text class="value p p-light">{{organizer}}</text>
-      </view>
-      <button class="profile-btn" bindtap="goToProfile" data-eventid="{{organizer.id}}">Profile</button>
-    </view>
-  </view>
-
-  <!-- About -->
-  <view class="event-description flex column">
-    <text class="h2">About the Event</text>
-    <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
-  </view>
-
-  <!-- Buttons -->
-  <view class="buttons flex">
-    <button class="btn btn-filled" bindtap="goToForm">Edit</button>
-    <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
-  </view>
+  <block wx:if="{{bookingsCount == 0}}">
+    <text>No one is going</text>
+  </block>
+  <block wx:elif="{{bookingsCount % 10 == 1 && bookingsCount != 11}}">
+    <text>{{bookingsCount}} person going</text>
+  </block>
+  <block wx:else>
+    <text>{{bookingsCount}} people going</text>
+  </block>
 </view>
+
+
+    <!-- Title -->
+    <text class="h1">{{event.title}}</text>
+
+    <!-- Event Details -->
+    <view class="info flex column jc-sb">
+      <view class="details flex">
+        <image class="details-img" src="../images/Date.png" mode="widthFix" />
+        <view class="details-text flex column">
+          <text class="label p p-dark">Date</text>
+          <text class="value p p-light">{{event.start_time}}</text>
+        </view>
+      </view>
+      <view class="details flex">
+        <image class="details-img" src="../images/Location.png" mode="widthFix" />
+        <view class="details-text flex column">
+          <text class="label p p-dark">Address</text>
+          <text class="value p p-light">{{event.address}}</text>
+        </view>
+      </view>
+      <view class="details details-organizer flex">
+        <image class="details-img" src="../images/Attendees.png" mode="widthFix" />
+        <view class="details-text flex column">
+          <text class="label p p-dark">Promoter</text>
+          <text class="value p p-light">{{promoter.nickname}}</text>
+        </view>
+        <button class="profile-btn" bindtap="goToPromoter" data-id="{{event.user_id}}">Profile</button>
+      </view>
+    </view>
+
+    <!-- About -->
+    <view class="event-description flex column">
+      <text class="h2">About the Event</text>
+      <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
+    </view>
+
+    <!-- Buttons -->
+    <view class="buttons flex">
+      <button class="btn btn-filled" bindtap="goToForm">Edit</button>
+      <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
+    </view>
+  </view>

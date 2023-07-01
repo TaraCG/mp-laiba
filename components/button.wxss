@@ -34,3 +34,8 @@
 .booking-button-attend {
   background-color: var(--primary-color);
 }
+
+.booking-button-profile {
+  background-color: var(--accent-color-pink);
+  color: var(--dark);
+}

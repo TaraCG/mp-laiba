@@ -14,11 +14,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    
     const page = this;
-    let {formData} = page.data
-    // if (this.data.resetData) this.resetData()
- 
+    if (this.data.resetData) this.resetData()
     const id = wx.getStorageSync('editedId');
 
     if (id) {
@@ -54,9 +51,9 @@ Page({
   },  
 
   setInputData(e) {
-    console.log(e)
-    let { field, value } = e.currentTarget.dataset;
-    let { formData } = this.data;
+    let {formData} = this.data
+    formData[e.currentTarget.dataset.field] = e.detail.value
+    this.setData({formData})
   
     if (field === 'title' && value.length > 50) {
       wx.showToast({

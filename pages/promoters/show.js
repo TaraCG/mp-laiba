@@ -1,4 +1,6 @@
-// pages/promoters/index.js
+// pages/promoters/show.js
+const app = getApp();
+
 Page({
 
   /**
@@ -8,20 +10,30 @@ Page({
 
   },
 
-  goToPromoter(e){
-    console.log(e)
-    const id = e.currentTarget.dataset.id;
-    const url = `/pages/promoters/show?id=${id}`
-    console.log(url)
-    wx.navigateTo({
-      url: url,
-    });
-  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    const id = options.id 
+    let page = this 
 
+    wx.request({
+      url: `${app.globalData.baseUrl}users/${id}`,
+      method: 'GET',
+      success(res) {
+        console.log(res);
+        const promoter = res.data;
+  
+        // Update local data
+        page.setData({
+          nickname: promoter.nickname,
+          recievedBookings: promoter.recieved_bookings,
+          events: promoter.events
+        });
+  
+        wx.hideToast();
+      }
+    });
   },
 
   /**
@@ -35,22 +47,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    let page = this;
 
-    // Get API data
-    wx.request({
-      url: `${getApp().globalData.baseUrl}users/promoters`,
-      method: 'GET',
-      success(res) {
-        // Assuming the response data is an array of promoters
-        const promoters = res.data;
-        console.log(promoters);
-        // Update the data in the component
-        page.setData({
-          promoters: promoters,
-        });
-      },
-    });
   },
 
   /**

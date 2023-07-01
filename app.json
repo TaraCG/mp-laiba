@@ -6,6 +6,7 @@
     "pages/events/show",
     "pages/events/form",
     "pages/promoters/index",
+    "pages/promoters/show",
     "pages/user/profile"
   ],
   "window": {
