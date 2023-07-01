@@ -1,7 +1,6 @@
 // pages/pages/create.js
 const app = getApp()
 Page({
-
   /**
    * Page initial data
    */
@@ -13,59 +12,51 @@ Page({
     address:"",
     description: "",
     formData: {},
-    src: []
+    src: [],
+    categories: ["Food", "Sports", "Music", "Nightlife", "Art"],
   },
-
   listenerBtnChooseImage: function () {
-    var that = this
+    const page = this
     // Upload an image
-    wx.chooseImage({
+    wx.chooseMedia({
       count: 1,
-      sizeType: ['original', 'compressed'],
+      mediaType: ['image'],
       sourceType: ['album', 'camera'],
-      success: function (res) {
-        console.log('success')
-        that.setData({
-          src: res.tempFilePaths
-        })
-        // Get image info
-        wx.getImageInfo({
-          src: res.tempFilePaths[0],
-          success (res) {
-            console.log(res.width)
-            console.log(res.height)
-            console.log(res.path)
+      maxDuration: 30,
+      camera: 'back',
+      success(res) {
+        console.log(res.tempFiles)
+        const filePath = res.tempFiles[0].tempFilePath
+        wx.uploadFile({
+          url:`${app.globalData.baseUrl}events/${id}/upload_image`,
+          filePath: filePath,
+          name:'file',
+          success:function(res){
+            console.log(res)
           }
         })
-       },
-       wx.uploadFile({
-        url:'http://192.168.11.168/kljjd/home/report/add/',
-        filePath: tempFilePaths,//这里是多个不行， tempFilePaths[0]这样可以
-        name:'file[]',//我尝试这样写也不行
-        formData:{
-          'user':'test'
-        },
-        success:function(res){
-          util.debug(res);
-        }
-     })
-   } ,
+      }
+    })
+   },
+    // adding this line below to have upload function and save images into cloudinary
+    //    
+  //  },
 
-//   imgLongTap: function (){
-//     // Save image to album
-//     wx.saveImageToPhotosAlbum({
-//       filePath: this.data.src,
+  imgLongTap: function (){
+    // Save image to album
+    wx.saveImageToPhotosAlbum({
+      filePath: this.data.src,
 
-//       success(res) {
-//         wx.showToast({
-//           title: 'Save',
-//           icon: 'success',
-//           duration: 1500
-//         })
-//       console.log('success')
-//     }
-//   })
-// },
+      success(res) {
+        wx.showToast({
+          title: 'Save',
+          icon: 'success',
+          duration: 1500
+        })
+      console.log('success')
+    }
+  })
+},
 
   /**
    * Lifecycle function--Called when page load

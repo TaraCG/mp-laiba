@@ -29,6 +29,16 @@
       <input id="address" data-field="address" placeholder="Address" bindinput="setInputData" type="text" name="title" />
     </view>
 
+    <!-- <view class="input-container">
+      <icon class="input-icon" type="category"/>
+      <view class="category_selector"></view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{categories}}">
+        <view class="picker">
+          Category: {{categories[index]}}
+        </view>
+      </picker>
+  </view> -->
+
     <button class="btn btn-filled" form-type="submit">Save</button>
   </form>
 </view>
