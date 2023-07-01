@@ -2,23 +2,33 @@
 
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
+    const app = this
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res)
+        wx.request ({
+          //url: 'http://localhost:3000/api/v1/login',
+          url: `${app.globalData.baseUrl}/login`,
+          method: 'POST',
+          data: { code: res.code }, // pass code in request body
+          success(loginRes) {
+            app.globalData.user = loginRes.data.user
+            app.globalData.header = loginRes.data.headers
+            console.log(loginRes) // { data: { headers: { "X-USER-TOKEN": <User Token> }, user: <User Object> }, ... }
+          },
+          fail(loginErr){
+            console.error({loginErr})
+          }
+        })
       }
     })
   },
 
   globalData: {
     userInfo: null,
-    header: {},
-    baseUrl: 'http://localhost:3000/api/v1/',
-    userId: 1,
+    user: null,
+    header: null,
+    baseUrl: 'http://localhost:3000/api/v1'
+    //baseUrl: 'https://name of our APP'
   }
 })

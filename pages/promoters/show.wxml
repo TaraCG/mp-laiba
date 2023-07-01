@@ -1,48 +1,26 @@
-<!--pages/user/profile.wxml-->
+<!--pages/promoters/show.wxml-->
 
-<!-- User info -->
 <view class="container">
   <view>
     <view class="user flex column ai-c">
       <view class="user-info flex column ai-c jc-c">
         <image class="avatar user-avatar" style="background-image: url('https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=719&q=80')" mode="" />
-        <text class="h1">{{user.nickname}}</text>
+        <text class="h1">{{nickname}}</text>
       </view>
     </view>
 
     <!-- Event stats -->
     <view class="stats flex ai-c jc-c">
       <view class="item flex column ai-c">
-        <text class="p">{{createdEventsCount}}</text>
+        <text class="p">{{events.count}} events</text>
         <text class="p p-dark">Organized</text>
       </view>
       <view class="item flex column ai-c">
-        <text class="p">{{bookingsCount}}</text>
+        <text class="p">{{recievedBookings.count}} guests</text>
         <text class="p p-dark">Attended</text>
       </view>
     </view>
   </view>
-
-<!-- For_hire -->
-  <view class="for-hire" wx:if="{{!user.for_hire}}">
-    <text>You have {{4 - createdEventsCount}} event(s) to organize and {{20 - recievedBookings}} booking(s) to get before you can list your services for hire.</text>
-  </view>
-  <view wx:else>
-    <text>List your services for hire</text>
-    <button bindtap="toggleForHire">Turn {{user.for_hire ? 'off' : 'on'}}</button>
-  </view>
-
-  <!-- form.wxml -->
-<form bindsubmit="submitForm">
-  <view wx:for="{{categories}}" wx:key="index">
-    <view class="category">
-      <text class="category-name">{{item.name}}</text>
-      <input class="rate-input" type="number" data-category="{{item.id}}" bindinput="updateRate" />
-    </view>
-  </view>
-  <button form-type="submit">Submit</button>
-</form>
-
 
   <!-- Posted events -->
   <view class="posted-events">
@@ -79,33 +57,4 @@
     </block>
   </view>
 
-  <!-- Events attending -->
-  <view class="attending-evenets">
-    <text class="h2">Going To Attend</text>
-    <block wx:if="{{bookedEvents.length > 0}}">
-      <view class="cards">
-        <view class="card card-hor" wx:for="{{bookedEvents}}" wx:key="index" wx:for-item="booking">
-          <view class="card-image img-small" style="background-image: url('https://images.unsplash.com/photo-1687421419353-db28220cef00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80')" bindtap="goToShow" data-id="{{booking.id}}">
-            <text class="poster-details p">Details</text>
-          </view>
-          <view class="card-info-hor">
-            <view class="flex column">
-              <text class="card-date">{{booking.start_time}}</text>
-              <text class="h3">{{booking.title}}</text>
-              <text class="card-address">{{booking.address}}</text>
-            </view>
-            <button class="booking-button {{bookedEvents ? 'booking-button-going' : 'booking-button-attend'}}" bindtap="addBooking" data-eventid="{{bookedEvents.id}}">
-              {{ bookedEvents ? 'Going!!!' : 'Attend'}}
-            </button>
-          </view>
-        </view>
-      </view>
-    </block>
-    <block wx:else>
-      <view class="flex column ai-c">
-        <text>You have no events :( Find one!</text>
-        <navigator class="btn navigator-btn" open-type="switchTab" url="/pages/events/index">All events →</navigator>
-      </view>
-    </block>
-  </view>
 </view>

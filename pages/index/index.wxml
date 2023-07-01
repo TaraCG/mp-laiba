@@ -17,7 +17,8 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <navigator url="/pages/eventsIndex/eventsIndex"class="usermotto">
+    <!-- <text class="user-motto">{{motto}}</text> -->
+    <button type="primary">View Event</button>
+  </navigator>
 </view>

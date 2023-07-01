@@ -5,52 +5,56 @@
 <view class="container flex column ai-c">
   <!-- Attendees -->
   <view class="attendees flex ai-c jc-c">
-    <view>
-      <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60')" mode="" />
-      <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
-      <image class="avatar avatar-bordered" style="background-image: url('https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60')" mode="" />
-    </view>
-    <text>{{bookingsCount}} GOING</text>
-  </view>
-
-  <!-- Title -->
-  <text class="h1">{{event.title}}</text>
-
-  <!-- Event Details -->
-  <view class="info flex column jc-sb">
-    <view class="details flex">
-      <image class="details-img" src="../images/Date.png" mode="widthFix" />
-      <view class="details-text flex column">
-        <text class="label p p-dark">Date</text>
-        <text class="value p p-light">{{event.start_time}}</text>
-      </view>
-    </view>
-    <view class="details flex">
-      <image class="details-img" src="../images/Location.png" mode="widthFix" />
-      <view class="details-text flex column">
-        <text class="label p p-dark">Address</text>
-        <text class="value p p-light">{{event.address}}</text>
-      </view>
-    </view>
-    <view class="details details-organizer flex">
-      <image class="details-img" src="../images/Attendees.png" mode="widthFix" />
-      <view class="details-text flex column">
-        <text class="label p p-dark">Organizer</text>
-        <text class="value p p-light">{{organizer}}</text>
-      </view>
-      <button class="profile-btn" bindtap="goToProfile" data-eventid="{{organizer.id}}">Profile</button>
-    </view>
-  </view>
-
-  <!-- About -->
-  <view class="event-description flex column">
-    <text class="h2">About the Event</text>
-    <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
-  </view>
-
-  <!-- Buttons -->
-  <view class="buttons flex">
-    <button class="btn btn-filled" bindtap="goToForm">Edit</button>
-    <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
-  </view>
+  <block wx:if="{{bookingsCount == 0}}">
+    <text>No one is going</text>
+  </block>
+  <block wx:elif="{{bookingsCount % 10 == 1 && bookingsCount != 11}}">
+    <text>{{bookingsCount}} person going</text>
+  </block>
+  <block wx:else>
+    <text>{{bookingsCount}} people going</text>
+  </block>
 </view>
+
+
+    <!-- Title -->
+    <text class="h1">{{event.title}}</text>
+
+    <!-- Event Details -->
+    <view class="info flex column jc-sb">
+      <view class="details flex">
+        <image class="details-img" src="../images/Date.png" mode="widthFix" />
+        <view class="details-text flex column">
+          <text class="label p p-dark">Date</text>
+          <text class="value p p-light">{{event.start_time}}</text>
+        </view>
+      </view>
+      <view class="details flex">
+        <image class="details-img" src="../images/Location.png" mode="widthFix" />
+        <view class="details-text flex column">
+          <text class="label p p-dark">Address</text>
+          <text class="value p p-light">{{event.address}}</text>
+        </view>
+      </view>
+      <view class="details details-organizer flex">
+        <image class="details-img" src="../images/Attendees.png" mode="widthFix" />
+        <view class="details-text flex column">
+          <text class="label p p-dark">Promoter</text>
+          <text class="value p p-light">{{promoter.nickname}}</text>
+        </view>
+        <button class="profile-btn" bindtap="goToPromoter" data-id="{{event.user_id}}">Profile</button>
+      </view>
+    </view>
+
+    <!-- About -->
+    <view class="event-description flex column">
+      <text class="h2">About the Event</text>
+      <text class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </text>
+    </view>
+
+    <!-- Buttons -->
+    <view class="buttons flex">
+      <button class="btn btn-filled" bindtap="goToForm">Edit</button>
+      <button class="btn btn-unfilled" bindtap="deleteEvent">Delete</button>
+    </view>
+  </view>

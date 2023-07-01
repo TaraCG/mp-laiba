@@ -1,4 +1,5 @@
-// pages/promoters/index.js
+// pages/eventsIndex/eventsIndex.js
+const app = getApp();
 Page({
 
   /**
@@ -8,19 +9,20 @@ Page({
 
   },
 
-  goToPromoter(e){
-    console.log(e)
-    const id = e.currentTarget.dataset.id;
-    const url = `/pages/promoters/show?id=${id}`
-    console.log(url)
-    wx.navigateTo({
-      url: url,
-    });
-  },
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad(options) {
+  onLoad: function(options) {
+    const page = this
+    wx.request({
+      url: `${app.globalData.baseUrl}/events`,
+      method: 'GET',
+      header: app.globalData.header,
+      success(res) {
+        console.log('events res', res)
+        page.setData({ event: res.data.events })
+      }
+    })
 
   },
 
@@ -35,22 +37,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    let page = this;
 
-    // Get API data
-    wx.request({
-      url: `${getApp().globalData.baseUrl}users/promoters`,
-      method: 'GET',
-      success(res) {
-        // Assuming the response data is an array of promoters
-        const promoters = res.data;
-        console.log(promoters);
-        // Update the data in the component
-        page.setData({
-          promoters: promoters,
-        });
-      },
-    });
   },
 
   /**

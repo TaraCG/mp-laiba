@@ -10,6 +10,7 @@ Page({
 
   },
 
+
   goToShow(e) {
     const id = e.currentTarget.dataset.id;
     utils.goToShow(id);
@@ -32,7 +33,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function (options) {
-    console.log('inside profile.js, options:', options);
+
     let page = this;
   
     // Get API data
@@ -49,7 +50,9 @@ Page({
           createdEvents: user.events,
           createdEventsCount: user.events.length,
           bookings: user.bookings,
-          bookingsCount: user.bookings.length
+          bookingsCount: user.bookings.length,
+          bookedEvents: user.booked_events,
+          recievedBookings: user.recieved_bookings.length
         });
   
         wx.hideToast();

@@ -1,3 +1,4 @@
+
 // pages/pages/create.js
 const app = getApp()
 Page({
@@ -75,42 +76,34 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    const page = this;
+    if (this.data.resetData) this.resetData()
+    const id = wx.getStorageSync('editedId');
 
+    if (id) {
+      console.log('id found');
+      wx.request({
+        url: `${app.globalData.baseUrl}/events/${id}`,
+        success(res) {
+          console.log(res);
+          page.setData({
+            formData: res.data,
+            editedId: id
+          });
+          wx.removeStorageSync('editedId');
+        }
+      });
+    }
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide() {
 
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage() {
-
+  bindCategoryChange(e) {
+    console.log(e)
+    let page = this
+    page.setData({resetData:false})
+    let { formData } = this.data;
+    formData['categoryIndex'] = e.detail.value;
+    this.setData({ formData });
   },
 
   bindDateChange(e) {
@@ -120,8 +113,9 @@ Page({
   },  
 
   setInputData(e) {
-    const { field, value } = e.currentTarget.dataset;
-    const { formData } = this.data;
+    let {formData} = this.data
+    formData[e.currentTarget.dataset.field] = e.detail.value
+    this.setData({formData})
   
     if (field === 'title' && value.length > 50) {
       wx.showToast({
@@ -146,34 +140,58 @@ Page({
   },
   
 
-    // New Event Submission
+  /**
+   * New Event Submission
+   */
   save(e) {
     // Post data to API
-    const page = this
-    let event = this.data.formData
-    event.user_id = 1
-    console.log(event)
-    wx.request({
-      header: app.globalData.header,
-      url: `${app.globalData.baseUrl}events`,
-      method: 'POST',
-      data: {event: event},
-      success(res) {
-        console.log(res)
-        // redirect to index page when done
-        if(res.code === 422) {
-          wx.showModal({
-            title: 'error',
-            content: res.data.errors.join(','), 
-            showCancel: false,
-            confirmText: "OK"
+    const page = this;
+    const event = e.detail.value;
+    event.user_id = 1;
+
+    if (page.data.editedId !== undefined && page.data.editedId !== null) {
+      wx.request({
+        url: `${app.globalData.baseUrl}events/${page.data.editedId}`,
+        method: 'PUT',
+        data: { event: event },
+        success(res) {
+          console.log(res);
+          page.setData({resetData:true})
+          wx.switchTab({
+            url: '/pages/events/index',
           })
         }
-        else {
+      });
+    } else {
+      wx.request({
+        header: app.globalData.header,
+        url: `${app.globalData.baseUrl}events`,
+        method: 'POST',
+        data: { event: event },
+        success(res) {
+          console.log(res);
+          page.setData({resetData:true})
           wx.switchTab({
-          url: "/pages/events/index"})
+            url: '/pages/events/index',
+          })
+        },
+        fail(res) {
+          console.log(res);
+          // Handle failure response
+          console.log(res);
+          wx.showToast({
+            title: 'Failed to create event',
+            icon: 'none',
+            duration: 2000
+          });
         }
-      } 
-    }) 
+      });
+    }
   },
-})
+
+  resetData(){
+    this.setData({
+      formData: {},
+    })
+  },
+});
