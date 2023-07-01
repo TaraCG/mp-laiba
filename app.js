@@ -1,4 +1,5 @@
 // app.js
+
 App({
   onLaunch() {
     const app = this
@@ -22,6 +23,7 @@ App({
       }
     })
   },
+
   globalData: {
     userInfo: null,
     user: null,

@@ -1,0 +1,41 @@
+.btn {
+  position: relative;
+  margin-top: .5rem;
+  border: 0;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 320rpx;
+}
+
+.btn-filled {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-unfilled {
+  border: 4rpx var(--primary-color) solid;
+  color: var(--primary-color);
+}
+
+.booking-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  color: var(--white);
+  font-size: 28rpx;
+}
+
+.booking-button-going {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.booking-button-attend {
+  background-color: var(--primary-color);
+}
+
+.booking-button-profile {
+  background-color: var(--accent-color-pink);
+  color: var(--dark);
+}

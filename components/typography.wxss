@@ -1,0 +1,41 @@
+.h1,
+.h2, 
+.h3
+{
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+.h1 {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.h2 {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.h3 {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.p {
+  font-size: 28rpx;
+}
+
+.p-light{
+  font-weight: 400;
+  color: var(--grey-light);
+}
+
+.p-dark{
+  font-weight: 600;
+  color: var(--grey-dark);
+}

@@ -1,4 +1,4 @@
-// pages/pages/create.js
+// pages/events/category.js
 Page({
 
   /**
@@ -25,10 +25,30 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
-  onShow() {
+  onShow: function() {
+    const category = this.options.category;
+    let page = this;
 
+    wx.request({
+      url: `${getApp().globalData.baseUrl}events/category`,
+      method: 'GET',
+      data: {
+        category: category
+      },
+      success: function(res) {
+        console.log(res.data); // Verify the response data
+        const events = res.data.events
+        page.setData({
+          category: category,
+          events: events
+        })
+      },
+      fail: function(error) {
+        console.error(error);
+      }
+    });
   },
-
+  
   /**
    * Lifecycle function--Called when page hide
    */

@@ -1,17 +1,47 @@
 {
-  "pages":[
+  "pages": [
     "pages/landing/landing",
-    "pages/pages/index",
-    "pages/pages/show",
-    "pages/pages/create",
-    "pages/user/profile",
-    "pages/eventsIndex/eventsIndex"
+    "pages/events/category",
+    "pages/events/index",
+    "pages/events/show",
+    "pages/events/form",
+    "pages/promoters/index",
+    "pages/promoters/show",
+    "pages/user/profile"
+
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "LaiBa",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#d0cfd4",
+    "selectedColor": "#FF8551",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/events/index",
+        "iconPath": "./pages/images/Calendar.png",
+        "selectedIconPath": "./pages/images/Calendar_selected.png"
+      },
+      {
+        "pagePath": "pages/promoters/index",
+        "iconPath": "./pages/images/Explore_def.png",
+        "selectedIconPath": "./pages/images/Explore.png"
+      },
+      {
+        "pagePath": "pages/events/form",
+        "iconPath": "./pages/images/Add_event.png",
+        "selectedIconPath": "./pages/images/Add_event_selected.png"
+      },
+      {
+        "pagePath": "pages/user/profile",
+        "iconPath": "./pages/images/Profile.png",
+        "selectedIconPath": "./pages/images/Profile_selected.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,10 @@
+page {
+  --background-color: rgb(250, 240, 228);
+  --primary-color: rgb(255, 133, 81);
+  --accent-color-blue: rgb(148, 196, 201);
+  --accent-color-pink: rgb(255, 222, 222);
+  --dark:rgba(18, 13, 38, 1);
+  --grey-dark: rgba(116, 118, 136, 1);
+  --grey-light: rgba(208, 207, 212, 1);
+  --white: #fff;
+}

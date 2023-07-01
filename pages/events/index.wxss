@@ -1,0 +1,15 @@
+/* pages/events/index.wxss */
+.category-buttons {
+  margin-top: -60rpx;
+  margin-bottom: 1em;
+}
+
+.category-buttons .category {
+  width: fit-content;
+  margin-right: 8rpx;
+  background-color: aqua;
+  font-size: 28rpx;
+  color: var(--white);
+  border-radius: 100rpx;
+  text-align: center;
+}
